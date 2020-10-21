@@ -1,0 +1,28 @@
+<ion-header no-border>
+  <div class = "login-header ion-padding">
+    <img class="logi-img" src="/assets/img/logo1.png" alt="logo">
+</div>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-icon slot="start" name="person-outline"></ion-icon>
+          <ion-label position="floating" color="success">Username</ion-label>         
+          <ion-input type="text" [(ngModel)]="username"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+          <ion-label position="floating" color="success">Password</ion-label>         
+          <ion-input type="text" [(ngModel)]="password"></ion-input>
+        </ion-item>
+  
+        <ion-button expand="full" class="ion-padding" color="success" (click)="tryLogin()">Login</ion-button>
+  
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
