@@ -12,4 +12,12 @@ export class ApprovedRequestsPage implements OnInit {
   ngOnInit() {
   }
 
+  checkApprovedAswenna(){
+
+  }
+
+  checkApprovedNCRCS(){
+    
+  }
+
 }

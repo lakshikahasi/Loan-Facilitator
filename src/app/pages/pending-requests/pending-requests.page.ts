@@ -12,4 +12,12 @@ export class PendingRequestsPage implements OnInit {
   ngOnInit() {
   }
 
+  checkPendingAswenna(){
+
+  }
+
+  checkPendingNCRCS(){
+    
+  }
+
 }

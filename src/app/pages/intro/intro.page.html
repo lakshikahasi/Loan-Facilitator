@@ -5,14 +5,31 @@
 </ion-header>
 
 <ion-content>
+  <br>
+  <br>
+  <ion-row>
+    <ion-col>
+      <ion-button expand="block" size="large" color="dark" (click)="changeLoanDetails()">Loan Details</ion-button>
+    </ion-col>
+  </ion-row>
+  
+  <br>
+  <br>
 
+  <ion-row>
+    <ion-col>
+      <ion-button expand="block" size="large" color="dark" (click)="checkLoanRequests()">Loan Requests</ion-button>
+    </ion-col>
+  </ion-row>
+  
   <br>
-  <ion-button expand="block" size="large" color="dark" (click)="changeLoanDetails()">Loan Details</ion-button>
   <br>
-  <br>
-  <ion-button expand="full" size="large" color="dark" (click)="checkLoanRequests()">Loan Requests</ion-button>
-  <br>
-  <br>
-  <ion-button expand="full" size="large" color="dark" (click)="viewPayments()">Payments</ion-button>
+
+  <ion-row>
+    <ion-col>
+      <ion-button expand="block" size="large" color="dark" (click)="viewPayments()">Payments</ion-button>
+    </ion-col>
+  </ion-row>
+  
   
 </ion-content>

@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="payment"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Payments Confirm</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <br>
+
+  <ion-card>
+
+    <br>
+    <ion-card>
+      <ion-input type="text" placeholder="NIC NO"></ion-input>
+    </ion-card>
+
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" (click)="search()">
+          <ion-icon name="search-outline"></ion-icon>
+          Search
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    
+    <br>
+    
+    <ion-card>
+      <ion-label>Name: Sunil</ion-label>
+      <br>
+      <ion-label>Account No: 3436634278899</ion-label>
+      <br>
+      <ion-row>
+        <ion-col>
+          <p>Aswenna</p>
+          <ion-button expand="block">Paid</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <p>NCRCS</p><ion-button expand="block">Paid</ion-button>   
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+  </ion-card>
+</ion-content>

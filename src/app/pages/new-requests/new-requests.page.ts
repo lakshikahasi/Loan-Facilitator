@@ -12,4 +12,12 @@ export class NewRequestsPage implements OnInit {
   ngOnInit() {
   }
 
+  checkNewAswenna(){
+
+  }
+
+  checkNewNCRCS(){
+
+  }
+
 }
