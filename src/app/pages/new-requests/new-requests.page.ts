@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-new-requests',
@@ -7,13 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewRequestsPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
   checkNewAswenna(){
-
+    this.router.navigate(['/new-request-loan']);
   }
 
   checkNewNCRCS(){

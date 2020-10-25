@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-approved-requests',
@@ -7,13 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApprovedRequestsPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
   checkApprovedAswenna(){
-
+    this.router.navigate(['/approved-request-loan']);
   }
 
   checkApprovedNCRCS(){

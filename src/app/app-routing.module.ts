@@ -59,6 +59,42 @@ const routes: Routes = [
     path: 'payment-confirm',
     loadChildren: () => import('./pages/payment-confirm/payment-confirm.module').then( m => m.PaymentConfirmPageModule)
   },
+  {
+    path: 'new-request-loan',
+    loadChildren: () => import('./pages/new-request-loan/new-request-loan.module').then( m => m.NewRequestLoanPageModule)
+  },
+  {
+    path: 'approved-request-loan',
+    loadChildren: () => import('./pages/approved-request-loan/approved-request-loan.module').then( m => m.ApprovedRequestLoanPageModule)
+  },
+  {
+    path: 'pending-request-loan',
+    loadChildren: () => import('./pages/pending-request-loan/pending-request-loan.module').then( m => m.PendingRequestLoanPageModule)
+  },
+  {
+    path: 'new-request-view',
+    loadChildren: () => import('./pages/new-request-view/new-request-view.module').then( m => m.NewRequestViewPageModule)
+  },
+  {
+    path: 'approved-request-view',
+    loadChildren: () => import('./pages/approved-request-view/approved-request-view.module').then( m => m.ApprovedRequestViewPageModule)
+  },
+  {
+    path: 'pending-request-view',
+    loadChildren: () => import('./pages/pending-request-view/pending-request-view.module').then( m => m.PendingRequestViewPageModule)
+  },
+  {
+    path: 'personal-details-view',
+    loadChildren: () => import('./pages/personal-details-view/personal-details-view.module').then( m => m.PersonalDetailsViewPageModule)
+  },
+  {
+    path: 'application-form-view',
+    loadChildren: () => import('./pages/application-form-view/application-form-view.module').then( m => m.ApplicationFormViewPageModule)
+  },
+  {
+    path: 'pending-reason',
+    loadChildren: () => import('./pages/pending-reason/pending-reason.module').then( m => m.PendingReasonPageModule)
+  },
 ];
 
 @NgModule({

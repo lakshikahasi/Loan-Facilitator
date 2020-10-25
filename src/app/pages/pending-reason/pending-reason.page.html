@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Pending</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <ion-label class="ion-padding">Reason</ion-label>
+  <br>
+  <ion-card>
+    <ion-textarea rows="20" cols="50" placeholder="Enter the reason to pend the loan request here..."></ion-textarea>
+  </ion-card>
+  <br>
+  <ion-button class="ion-padding" (click)="submitPending()">Submit</ion-button>
+</ion-content>

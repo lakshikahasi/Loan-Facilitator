@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="approved-requests"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Applicant's name(Sunil)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <br>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" color="success" (click)="viewPendingPersonalInfo()">Personal Information</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" color="success" (click)="viewPendingApplicationForm()">Application Form</ion-button>
+      </ion-col>
+    </ion-row>
+    <br>
+  </ion-card>
+  <br>
+</ion-content>
