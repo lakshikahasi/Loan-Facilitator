@@ -2,8 +2,62 @@
   <ion-toolbar>
     <ion-title>New Loans</ion-title>
   </ion-toolbar>
+  <div class = "login-header ion-padding">
+    <img class="logi-img" src="#" alt="Choose image">
+</div>
 </ion-header>
 
 <ion-content>
+
+  <ion-list class="ion-padding">
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Name of the Scheme</ion-label>  
+      <ion-textarea rows="1" cols="50"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">General information</ion-label>  
+      <ion-textarea rows="3" cols="50"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Implementation of Scheme</ion-label>  
+      <ion-textarea rows="5" cols="50"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Eligible Borrowers</ion-label>  
+      <ion-textarea rows="2" cols="50"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Eligible Crops</ion-label>  
+      <ion-textarea rows="5" cols="50"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Maximum Loan Amount</ion-label>  
+      <ion-textarea rows="2" cols="50"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Rate of Interest and Repayment Period</ion-label>  
+      <ion-textarea rows="4" cols="50"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Participating Financial Institutions</ion-label>  
+      <ion-textarea rows="5" cols="50"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">For Clarifications and Information</ion-label>  
+      <ion-textarea rows="3" cols="50"></ion-textarea>
+    </ion-item> 
+
+    <ion-button size="small" class="ion-padding" (click)="createNewLoan()">Submit</ion-button>
+
+  </ion-list>
 
 </ion-content>
