@@ -13,14 +13,15 @@ class banks extends Model
      * @var array
      */
     protected $fillable = [
-        'username', 'password', 'name', 'description', 'logo'
+        'bank_id','password','bank_name','bank_des','bank_logo'
     ];
+	
+	
 
     /**
      * The attributes excluded from the model's JSON form.
      *
      * @var array
      */
-    //protected $hidden = [];
+    protected $hidden = [];
 }
-?>

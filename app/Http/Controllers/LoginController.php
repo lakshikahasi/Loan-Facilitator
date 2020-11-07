@@ -27,7 +27,7 @@ class LoginController extends Controller
         return response()->json($a, 201);*/
 
        $rules = [
-          'username' => 'required',
+          'bank_id' => 'required',
           'password' => 'required'
        ];
  
@@ -43,10 +43,10 @@ class LoginController extends Controller
        )*/
 
 
-        $username    = $request->input('username');
+        $bank_id    = $request->input('bank_id');
 
         try {
-            $login = banks::where('username', $username)->first();
+            $login = banks::where('bank_id', $bank_id)->first();
             if ($login) {
                 if ($login->count() > 0) {
                     if ($request->input('password')== $login->password) {

@@ -14,12 +14,12 @@ class CreateBanksTable extends Migration
     public function up()
     {
         Schema::create('banks', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('username')->unique();
-            $table->string('password');
-            $table->string('name');
-            $table->string('description');
-            $table->binary('logo');
+             $table->increments('id');
+			$table->string('bank_id')->unique();
+			$table->string('bank_name');
+			$table->string('password');
+			$table->string('bank_des');
+			$table->binary('bank_logo');
             $table->timestamps();
         });
     }
@@ -35,4 +35,3 @@ class CreateBanksTable extends Migration
     }
 }
 
-?>
