@@ -6,11 +6,11 @@ import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs';
 export class User {
     
-  username: string;
+  bank_id: string;
 
-  constructor( username: string) {
+  constructor( bank_id: string) {
    
-    this.username = username;
+    this.bank_id =  bank_id;
   }
 }
 
@@ -49,20 +49,19 @@ export class AccessProviders{
             
         }*/
 
-        postLogin(body){
+        postLogin(body:any){
           let headers=new HttpHeaders({
-              'Content-Type':'applicationJson,charset-UTF-8'
+            'Content-Type':'applicationJson,charset-UTF-8'
           });
           let options={
               headers:headers
           }
-          this.currentUser = new User(body.username);
+          this.currentUser = new User(body.bank_id);
           this.isLogged = true;
           return this.http.post(this.server+'/login',JSON.stringify(body),{
               headers: new HttpHeaders().set('Content-Type', 'application/json'),
             })
-          . map(res=>res
-          );
+          . map(res=>res);
           
           
       }
