@@ -23,3 +23,9 @@ $router->get('/', function () use ($router) {
 });*/
 
 $router->post('/login', 'LoginController@login');
+
+
+
+$router->get('/bankdetails/{bank_id}', 'BankController@bankdetails');
+$router->get('/getloans/{bank_id}', 'LoanController@getloans');
+
