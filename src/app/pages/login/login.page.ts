@@ -31,7 +31,7 @@ export class LoginPage implements OnInit {
   async tryLogin(){
 
     if(this.bank_id==""){
-      this.presentToast("Username number is required");
+      this.presentToast("bank id is required");
     }else if(this.password=="")
     {
       this.presentToast("Password is required");
@@ -55,9 +55,9 @@ export class LoginPage implements OnInit {
                 loader.dismiss();
                 this.disableButton=false;
                 this.presentToast(res.message);
-               // this.storage.set('storage_XXX',res.data);
+                this.storage.set('storage_XXX',res.data);
                 this.router.navigate(['/intro']);
-                console.log(res.data);
+                console.log("my data",res.data);
                 
               /*  this.storage.get('storage_XXX').then((val) => {
                   console.log('Your age is',  val.username);
@@ -90,7 +90,7 @@ export class LoginPage implements OnInit {
     let toast = await this.toastCtrl.create({
       message: a,
       duration: 3000,
-      position: 'top'
+      position:'top'
     });
   toast.present();
   }

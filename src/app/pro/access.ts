@@ -23,7 +23,7 @@ export class User {
 })
 
 export class AccessProviders{
- server:string='http://localhost:8000';
+  public static server:string='http://localhost:8000';
  currentUser: User;
  isLogged: Boolean = false;
 
@@ -58,7 +58,7 @@ export class AccessProviders{
           }
           this.currentUser = new User(body.bank_id);
           this.isLogged = true;
-          return this.http.post(this.server+'/login',JSON.stringify(body),{
+          return this.http.post(AccessProviders.server+'/login',JSON.stringify(body),{
               headers: new HttpHeaders().set('Content-Type', 'application/json'),
             })
           . map(res=>res);

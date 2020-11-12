@@ -18,10 +18,10 @@
   <br>
   <br>
   <!--<ion-card>-->
-    <ion-row>
+    <ion-row *ngFor='let item of items'>
       <ion-col>
         <!--<img class="logi-img" src="/assets/img/People's.jpg" alt="logo">-->
-        <ion-button expand="block" size="large" (click)="checkNewAswenna()">Aswenna Loan Scheme</ion-button>
+        <ion-button expand="block" size="large" (click)="checkNewAswenna()">{{items.loan_name}}</ion-button>
       </ion-col>
     </ion-row>
   <!--</ion-card>-->
@@ -29,11 +29,7 @@
   <br>
 
   <!--<ion-card>-->
-    <ion-row>
-      <ion-col>
-        <ion-button expand="block" size="large" (click)="checkNewNCRCS()">NCRCS Loan Scheme</ion-button>
-      </ion-col>
-    </ion-row>
+
   <!--</ion-card>-->
   
 </ion-content>
