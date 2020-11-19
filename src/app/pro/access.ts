@@ -6,11 +6,11 @@ import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs';
 export class User {
     
-  username: string;
+  bank_id: string;
 
-  constructor( username: string) {
+  constructor( bank_id: string) {
    
-    this.username = username;
+    this.bank_id = bank_id;
   }
 }
 
@@ -23,7 +23,7 @@ export class User {
 })
 
 export class AccessProviders{
- server:string='http://localhost:8000';
+ public static server:string='http://localhost:8000';
  currentUser: User;
  isLogged: Boolean = false;
 
@@ -33,21 +33,23 @@ export class AccessProviders{
        
   ) { }
   
-        /*postData(body){
-            let headers=new HttpHeaders({
-                'Content-Type':'applicationJson,charset-UTF-8'
-            });
-            let options={
-                 headers:headers
-            }
+  postData(body){
+    let headers=new HttpHeaders({
+      'Content-Type':'applicationJson,charset-UTF-8'
+    });
+    let options={
+      headers:headers
+    }
             
-            return this.http.post(this.server+'/api/farmers',JSON.stringify(body),{
-                headers: new HttpHeaders().set('Content-Type', 'application/json'),
-              }).timeout(59000)
-            . map(res=>res);
-            
-            
-        }*/
+    /* return this.http.post(this.server+'/createLoan',JSON.stringify(body),{
+      headers: new HttpHeaders().set('Content-Type', 'application/json'),
+   }).timeout(59000)
+ */
+    return this.http.post(AccessProviders.server+'/createLoan',JSON.stringify(body),{
+       headers: new HttpHeaders().set('Content-Type', 'application/json'),
+    }).timeout(59000)
+    . map(res=>res);                   
+  }
 
         postLogin(body){
           let headers=new HttpHeaders({
@@ -56,15 +58,13 @@ export class AccessProviders{
           let options={
               headers:headers
           }
-          this.currentUser = new User(body.username);
+          this.currentUser = new User(body.bank_id);
           this.isLogged = true;
-          return this.http.post(this.server+'/login',JSON.stringify(body),{
+          return this.http.post(AccessProviders.server+'/login',JSON.stringify(body),{
               headers: new HttpHeaders().set('Content-Type', 'application/json'),
             })
-          . map(res=>res
-          );
-          
-          
+          . map(res=>res);
+                   
       }
 
       /*postDetails(body){

@@ -11,7 +11,7 @@ import {Storage} from '@ionic/storage';
 })
 export class LoginPage implements OnInit {
 
-  username:string="";
+  bank_id:string="";
   password:string="";
 
   disableButton;
@@ -30,8 +30,8 @@ export class LoginPage implements OnInit {
 
   async tryLogin(){
 
-    if(this.username==""){
-      this.presentToast("Username number is required");
+    if(this.bank_id==""){
+      this.presentToast("Bank id is required");
     }else if(this.password=="")
     {
       this.presentToast("Password is required");
@@ -44,9 +44,8 @@ export class LoginPage implements OnInit {
       loader.present();
         return new Promise(resoler=>{
           let body={
-           
-            
-            username:this.username,
+  
+            bank_id:this.bank_id,
             password:this.password,
            
           }
@@ -57,16 +56,16 @@ export class LoginPage implements OnInit {
                 this.presentToast(res.message);
                 this.storage.set('storage_XXX',res.data);
                 this.router.navigate(['/intro']);
-                console.log(res.data);
+                console.log("my data",res.data);
                 
-                this.storage.get('storage_XXX').then((val) => {
+                /*this.storage.get('storage_XXX').then((val) => {
                   console.log('Your age is',  val.username);
                  // val.telephone_number
                   
                 //var getBackMyJSON = $('storage_XXX').data('telephone_number').key;
                 //console.log('Your age is', getBackMyJSON);
                 //this.navCtrl.push(farmerprofile,body);
-                });
+                });*/
               }else{
                 loader.dismiss();
                 this.disableButton=false;

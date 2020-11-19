@@ -1,3 +1,96 @@
-<ion-app>
+<!-- <ion-app>
   <ion-router-outlet></ion-router-outlet>
+</ion-app> -->
+
+<ion-app>
+  <ion-menu menuId="main-menu" content-id="main">
+
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>BANK</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item routerLink="/loan-details">
+            <ion-icon name="document-text-outline"></ion-icon>
+            <ion-label>Loan Details</ion-label>
+          </ion-item>
+        </ion-menu-toggle>       
+      </ion-list>
+
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item routerLink="/loan-requests">
+            <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+            <ion-label>Loan Requests</ion-label>
+          </ion-item>
+        </ion-menu-toggle>          
+      </ion-list>
+
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item routerLink="/payment">
+            <ion-icon name="cash-outline"></ion-icon>
+            <ion-label>Payments</ion-label>
+          </ion-item>
+        </ion-menu-toggle>       
+      </ion-list>
+
+      <ion-list>
+        <hr>Other
+        <ion-menu-toggle>
+          <ion-item>
+            <ion-icon name="alert-circle-outline"></ion-icon>
+            <ion-label>About us</ion-label>
+          </ion-item>
+        </ion-menu-toggle>  
+
+        <ion-menu-toggle>
+          <ion-item>
+            <ion-icon name="call-outline"></ion-icon>
+            <ion-label>Contact us</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item>
+            <ion-icon name="bag-check-outline"></ion-icon>
+            <ion-label>Privacy Policy</ion-label>
+          </ion-item>
+        </ion-menu-toggle>        
+      </ion-list>
+
+      <ion-list>
+        <hr>Settings
+        <ion-menu-toggle>
+          <ion-item>
+            <ion-icon name="create-outline"></ion-icon>
+            <ion-label>Edit Profile</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item>
+            <ion-icon name="settings-outline"></ion-icon>
+            <ion-label>Change Password</ion-label>
+          </ion-item>
+        </ion-menu-toggle>        
+      </ion-list>
+
+      <ion-list>
+          <ion-item routerLink="/payment">
+            <ion-icon name="warning-outline"></ion-icon>
+            <ion-label>Logout</ion-label>
+          </ion-item>       
+      </ion-list>
+
+    </ion-content>
+
+  </ion-menu>
+
+  <ion-router-outlet id="main"></ion-router-outlet>
+
 </ion-app>
