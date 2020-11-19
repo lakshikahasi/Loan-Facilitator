@@ -23,7 +23,7 @@ export class User {
 })
 
 export class AccessProviders{
-  public static server:string='http://localhost:8000';
+  public static server:string='http://192.168.8.183:8080';
  currentUser: User;
  isLogged: Boolean = false;
 

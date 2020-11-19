@@ -21,7 +21,7 @@
     <ion-row *ngFor='let item of items'>
       <ion-col>
         <!--<img class="logi-img" src="/assets/img/People's.jpg" alt="logo">-->
-        <ion-button expand="block" size="large" (click)="checkNewAswenna()">{{items.loan_name}}</ion-button>
+        <ion-button expand="block" size="large" (click)="ViewLoans($event)" id="{{item.loan_id}}">{{item.loan_name}}</ion-button>
       </ion-col>
     </ion-row>
   <!--</ion-card>-->

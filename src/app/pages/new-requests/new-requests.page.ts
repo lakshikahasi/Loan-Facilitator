@@ -14,6 +14,8 @@ import {User, AccessProviders } from '../../pro/access';
 export class NewRequestsPage implements OnInit {
   bank_id:string="";
   items:any;
+  loan_name:string="";
+  dat:string="";
   constructor( private router :Router,
     private storage:Storage,
     private navCtrl:NavController,
@@ -31,6 +33,7 @@ export class NewRequestsPage implements OnInit {
         
               this.http.get(AccessProviders.server+'/getloans/'+this.bank_id).map(res => res).subscribe(res=>{ 
                 this.items=res;
+                console.log(this.items);
                 console.log(this.items.loan_name);
                 //console.log(this.bank_id);
                 //console.log(res);
@@ -41,12 +44,21 @@ export class NewRequestsPage implements OnInit {
   });
 }
 
-  checkNewAswenna(){
-    this.router.navigate(['/new-request-loan']);
-  }
+ViewLoans(event:any){
 
-  checkNewNCRCS(){
+  console.log(event.target.id);
+  this.dat=event.target.id;
+  console.log(this.dat);
+  this.storage.set('storage_loan',this.dat);
+ 
+  this.storage.get("storage_loan").then((res)=>{
+    console.log(res);
+  });
 
-  }
+  this.router.navigate(['/new-request-loan']);
+}
+
+ 
+  
 
 }
