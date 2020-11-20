@@ -26,7 +26,7 @@ class BankController extends Controller
 	
 	
 	 $user = banks::where('bank_id',$bank_id)->first();
-		return $user;
+	return $user;
         //return response()->json(banks::all());
     
 

@@ -28,4 +28,7 @@ $router->post('/login', 'LoginController@login');
 
 $router->get('/bankdetails/{bank_id}', 'BankController@bankdetails');
 $router->get('/getloans/{bank_id}', 'LoanController@getloans');
+//$router->get('/showapplications/{loan_id}', 'requestController@showapplications');
 
+$router->get('/showapplications/{loan_id}', [ 'uses' => 'requestController@showapplications']);
+$router->get('/showfarmerdetails/{id}', [ 'uses' => 'requestController@showfarmerdetails']);
