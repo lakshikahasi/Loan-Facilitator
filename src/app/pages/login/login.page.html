@@ -1,4 +1,7 @@
 <ion-header no-border>
+  <ion-toolbar color="primary">
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
   <div class = "login-header">
     <img class="logi-img" src="/assets/img/logo-img.jpg" alt="logo">
 </div>
@@ -9,13 +12,13 @@
     <ion-card-content>
       <ion-list>
         <ion-item>
-          <ion-icon slot="start" name="person-outline"></ion-icon>
+          <ion-icon slot="start" name="person-circle-sharp"></ion-icon>
           <ion-label position="floating" color="success">Username</ion-label>         
           <ion-input type="text" [(ngModel)]="bank_id"></ion-input>
         </ion-item>
     
         <ion-item>
-          <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+          <ion-icon slot="start" name="lock-closed"></ion-icon>
           <ion-label position="floating" color="success">Password</ion-label>         
           <ion-input type="password" [(ngModel)]="password"></ion-input>
         </ion-item>

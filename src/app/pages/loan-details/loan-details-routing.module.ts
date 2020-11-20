@@ -5,7 +5,7 @@ import { LoanDetailsPage } from './loan-details.page';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'loan-details',
     component: LoanDetailsPage,
     children:[
       {
@@ -30,13 +30,18 @@ const routes: Routes = [
         path:'',
         redirectTo: 'loan-details/edit-loans',
         pathMatch: 'full'
-      },
+      }/* ,
       {
         path:'',
         redirectTo: 'loan-details/new-loans',
         pathMatch: 'full'
-      }
+      } */
     ]
+  },
+  {
+    path:'',
+    redirectTo: 'loan-details/edit-loans',
+    pathMatch: 'full'
   }
 ];
 

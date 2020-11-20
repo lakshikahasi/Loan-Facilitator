@@ -1,10 +1,10 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="intro"></ion-back-button>
+    </ion-buttons>
     <ion-title>New Loans</ion-title>
   </ion-toolbar>
-  <div class = "login-header ion-padding">
-    <img class="logi-img" src="#" alt="Choose image">
-</div>
 </ion-header>
 
 <ion-content>
@@ -12,52 +12,52 @@
   <ion-list class="ion-padding">
 
     <ion-item>
-      <ion-label position="floating" color="primary">Loan id</ion-label>  
+      <ion-label position="floating" color="success">Loan id</ion-label>  
       <ion-textarea rows="1" cols="50" [(ngModel)]="loan_id"></ion-textarea>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating" color="primary">Name of the Scheme</ion-label>  
+      <ion-label position="floating" color="success">Name of the Scheme</ion-label>  
       <ion-textarea rows="1" cols="50" [(ngModel)]="loan_name"></ion-textarea>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating" color="primary">General Information</ion-label>  
+      <ion-label position="floating" color="success">General Information</ion-label>  
       <ion-textarea rows="3" cols="50" [(ngModel)]="genera_info"></ion-textarea>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating" color="primary">Specific Information</ion-label>  
+      <ion-label position="floating" color="success">Specific Information</ion-label>  
       <ion-textarea rows="5" cols="50" [(ngModel)]="specific_info"></ion-textarea>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating" color="primary">Eligible Borrowers</ion-label>  
+      <ion-label position="floating" color="success">Eligible Borrowers</ion-label>  
       <ion-textarea rows="2" cols="50" [(ngModel)]="eligible_borrowers"></ion-textarea>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating" color="primary">Eligible Crops</ion-label>  
+      <ion-label position="floating" color="success">Eligible Crops</ion-label>  
       <ion-textarea rows="5" cols="50" [(ngModel)]="eligible_crops"></ion-textarea>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating" color="primary">Maximum Loan Amount</ion-label>  
+      <ion-label position="floating" color="success">Maximum Loan Amount</ion-label>  
       <ion-textarea rows="2" cols="50" [(ngModel)]="maximum_loanamount"></ion-textarea>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating" color="primary">Rate of Interest</ion-label>  
+      <ion-label position="floating" color="success">Rate of Interest</ion-label>  
       <ion-textarea rows="4" cols="50" [(ngModel)]="Rateofinterest"></ion-textarea>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating" color="primary">Repayment Period</ion-label>  
+      <ion-label position="floating" color="success">Repayment Period</ion-label>  
       <ion-textarea rows="4" cols="50" [(ngModel)]="Repaymentperiod"></ion-textarea>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating" color="primary">More information</ion-label>  
+      <ion-label position="floating" color="success">More information</ion-label>  
       <ion-textarea rows="4" cols="50" [(ngModel)]="more_info"></ion-textarea>
     </ion-item>
 
@@ -67,7 +67,7 @@
     </ion-item> -->
 
     <ion-item>
-      <ion-label position="floating" color="primary">Image for loan scheme</ion-label>  
+      <ion-label position="floating" color="success">Image for loan scheme</ion-label>  
       <ion-textarea rows="4" cols="50" [(ngModel)]="loan_logo"></ion-textarea>
     </ion-item>
 
@@ -76,7 +76,7 @@
       <ion-textarea rows="3" cols="50"></ion-textarea>
     </ion-item>  --> 
 
-    <ion-button size="small" class="ion-padding" (click)="createNewLoan()">Submit</ion-button>
+    <ion-button size="small" color="success" class="ion-padding" (click)="createNewLoan()">Submit</ion-button>
 
   </ion-list>
 

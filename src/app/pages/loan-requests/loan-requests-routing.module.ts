@@ -5,7 +5,7 @@ import { LoanRequestsPage } from './loan-requests.page';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'loan-requests',
     component: LoanRequestsPage,
     children:[
       {
@@ -36,10 +36,19 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'obtained-loans',
+        children:[
+          {
+            path: '',
+            loadChildren: () => import('../obtained-loans/obtained-loans.module').then(m => m.ObtainedLoansPageModule)
+          }
+        ]
+      },
+      {
         path:'',
         redirectTo: 'loan-requests/new-requests',
         pathMatch: 'full'
-      },
+      }/* ,
       {
         path:'',
         redirectTo: 'loan-requests/approved-requests',
@@ -49,8 +58,13 @@ const routes: Routes = [
         path:'',
         redirectTo: 'loan-requests/pending-requests',
         pathMatch: 'full'
-      }
+      } */
     ]
+  },
+  {
+    path:'',
+    redirectTo: 'loan-requests/new-requests',
+    pathMatch: 'full'
   }
 ];
 

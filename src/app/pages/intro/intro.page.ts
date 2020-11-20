@@ -15,6 +15,7 @@ export class IntroPage implements OnInit {
   public items : any;
   bank_id: string="";
   bank_logo: string="";
+  bank_name: string="";
 
   constructor(private router: Router,
     private storage:Storage,
@@ -37,6 +38,7 @@ export class IntroPage implements OnInit {
         console.log(this.bank_logo);
         this.bank_id=this.items.bank_id;
         console.log(this.bank_id);
+        this.bank_name = this.items.bank_name;
       });
     });
   }

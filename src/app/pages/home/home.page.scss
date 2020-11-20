@@ -10,12 +10,12 @@ ion-img {
 }
 
 .slide-one {
-    background :url('../../../assets/img/background.jpeg') 0 0/ 100% 100% no-repeat;
+    background :url('../../../assets/img/background(b).jpg') 0 0/ 100% 100% no-repeat;
     color :#fff;
 }
 
 .slide-two {
-    background :url('../../../assets/img/loan.jpg') 0 0/ 100% 100% no-repeat;
+    //background :url('../../../assets/img/loan.jpg') 0 0/ 100% 100% no-repeat;
     color :#fff;
 
 }
@@ -28,3 +28,10 @@ ion-img {
 .labelintro span {
     font-size: 14px;
 }
+
+ion-content{
+    //--background: var(--ion-color-primary);
+    --background :url('../../../assets/img/background(b).jpg') 0 0/ 100% 100% no-repeat;
+    --color :#fff;
+}
+

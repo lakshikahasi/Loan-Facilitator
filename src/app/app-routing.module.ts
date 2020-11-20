@@ -95,6 +95,18 @@ const routes: Routes = [
     path: 'pending-reason',
     loadChildren: () => import('./pages/pending-reason/pending-reason.module').then( m => m.PendingReasonPageModule)
   },
+  {
+    path: 'obtained-loans',
+    loadChildren: () => import('./pages/obtained-loans/obtained-loans.module').then( m => m.ObtainedLoansPageModule)
+  },
+  {
+    path: 'obtained-loans-loan',
+    loadChildren: () => import('./pages/obtained-loans-loan/obtained-loans-loan.module').then( m => m.ObtainedLoansLoanPageModule)
+  },
+  {
+    path: 'obtained-loan-view',
+    loadChildren: () => import('./pages/obtained-loan-view/obtained-loan-view.module').then( m => m.ObtainedLoanViewPageModule)
+  },
 ];
 
 @NgModule({
