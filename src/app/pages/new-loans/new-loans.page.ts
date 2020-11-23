@@ -47,7 +47,7 @@ export class NewLoansPage implements OnInit {
   ngOnInit() {
   }
 
-  async createNewLoan(){
+  async createLoan(){
     if(this.loan_id==""){
       this.presentToast("Loan id is required")
     }else if(this.loan_name==""){
@@ -142,7 +142,7 @@ export class NewLoansPage implements OnInit {
         },{
           text: 'Try Again',
           handler: () => {
-            this.createNewLoan();
+            this.createLoan();
             console.log('Try same attempt again')
           }
         }

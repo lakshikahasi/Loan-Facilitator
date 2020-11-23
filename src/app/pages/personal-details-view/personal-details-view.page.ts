@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { from } from 'rxjs';
+import { Storage } from '@ionic/storage';
+import { AccessProviders } from '../../pro/access';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-personal-details-view',
@@ -7,9 +11,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonalDetailsViewPage implements OnInit {
 
-  constructor() { }
+  appid:string="";
+  items:any;
+
+  choose:string="";
+  nameini:string="";
+  namefull:string="";
+  address:string="";
+  TpNo:string="";
+  dob:string="";
+  nic:string="";
+
+  constructor(
+    public storage: Storage,
+    private accessPr: AccessProviders,
+    public http: HttpClient
+  ) { }
 
   ngOnInit() {
+    this.storage.get("storage_appid").then((val)=>{
+      console.log(val);
+      this.appid=val;
+
+      console.log(this.appid);
+      this.http.get(AccessProviders.server+'/getFarmerDetails/'+this.appid).map(res=>res).subscribe((res:any)=>{
+        console.log(res);
+        this.items=res.message;
+        console.log(this.items);
+      });
+    });
   }
 
 }
