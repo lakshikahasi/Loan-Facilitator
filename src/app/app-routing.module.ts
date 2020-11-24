@@ -106,7 +106,15 @@ const routes: Routes = [
   {
     path: 'obtained-loan-view',
     loadChildren: () => import('./pages/obtained-loan-view/obtained-loan-view.module').then( m => m.ObtainedLoanViewPageModule)
+  },  {
+    path: 'applicationview',
+    loadChildren: () => import('./pages/applicationview/applicationview.module').then( m => m.ApplicationviewPageModule)
   },
+  {
+    path: 'approveloan',
+    loadChildren: () => import('./pages/approveloan/approveloan.module').then( m => m.ApproveloanPageModule)
+  },
+
 ];
 
 @NgModule({

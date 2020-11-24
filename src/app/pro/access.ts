@@ -67,7 +67,7 @@ export class AccessProviders{
                    
       }
 
-      /*postDetails(body){
+      postreason(body){
         let headers=new HttpHeaders({
             'Content-Type':'applicationJson,charset-UTF-8'
         });
@@ -75,15 +75,15 @@ export class AccessProviders{
              headers:headers
         }
         
-        return this.http.post(this.server+'/editDetails',JSON.stringify(body),{
+        return this.http.post(AccessProviders.server+'/rejectedloan',JSON.stringify(body),{
             headers: new HttpHeaders().set('Content-Type', 'application/json'),
           }).timeout(59000)
         . map(res=>res);
         
         
-    }*/
-    
-    /*postChangepw(body,id){
+    }
+
+    postreasonapp(body){
       let headers=new HttpHeaders({
           'Content-Type':'applicationJson,charset-UTF-8'
       });
@@ -91,13 +91,16 @@ export class AccessProviders{
            headers:headers
       }
       
-      return this.http.post(this.server+'/update/'+id,JSON.stringify(body),{
+      return this.http.post(AccessProviders.server+'/approveloan',JSON.stringify(body),{
           headers: new HttpHeaders().set('Content-Type', 'application/json'),
         }).timeout(59000)
       . map(res=>res);
       
       
-  }*/
+  }
+  
+    
+  
      
         
 }

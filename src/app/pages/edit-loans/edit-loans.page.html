@@ -11,9 +11,10 @@
 
   <ion-item style="color:success">
     <ion-label >Choose the Loan</ion-label>
-    <ion-select interface="popover" >
-      <ion-select-option value="aswenna">Aswenna</ion-select-option>
-      <ion-select-option value="NCRCS">NCRCS</ion-select-option>
+    <ion-select interface="popover" [(ngModel)]="loanid">
+      <ion-select-option value="{{item.loan_id}}" *ngFor='let item of items'>{{item.loan_name}}</ion-select-option>
+     <!-- <ion-select-option value="aswenna">Aswenna</ion-select-option>
+      <ion-select-option value="NCRCS">NCRCS</ion-select-option>-->
     </ion-select>
   </ion-item>
 

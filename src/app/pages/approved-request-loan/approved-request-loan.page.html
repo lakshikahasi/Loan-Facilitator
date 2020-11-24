@@ -13,52 +13,27 @@
 
   <ion-grid>
     <ion-row class="bold">
-      <ion-col size="4">Name</ion-col>
-      <ion-col size="4">Date</ion-col>
+      <ion-col size="4">Application ID</ion-col>
+      <ion-col size="4">NIC</ion-col>
+      <ion-col size="4">Approved Date</ion-col>
+      <ion-col size="4"></ion-col>
     </ion-row>
 
     <br>
     <br>
 
-    <ion-row>
-      <ion-col size="4">Sunil</ion-col>
-      <ion-col size="4">29/10/2020</ion-col>
+    <ion-row *ngFor='let item of items'>
+      <ion-col size="4">{{item.application_id}}</ion-col>
+      <ion-col size="4">{{item.nic}}</ion-col>
+      <ion-col size="4">{{item.date}}</ion-col>
       <ion-col size="4">
-        <ion-button (click)="viewApprovedRequest()">View</ion-button>
+        <ion-button (click)="viewNewRequest($event)" id="{{item.application_id}}">View</ion-button>
       </ion-col>
     </ion-row>
 
-    <ion-row>
-      <ion-col size="4">Sirisena</ion-col>
-      <ion-col size="4">14/10/2020</ion-col>
-      <ion-col size="4">
-        <ion-button (click)="viewApprovedRequest()">View</ion-button>
-      </ion-col>
-    </ion-row>
+    
 
-    <ion-row>
-      <ion-col size="4">Saman</ion-col>
-      <ion-col size="4">09/10/2020</ion-col>
-      <ion-col size="4">
-        <ion-button (click)="viewApprovedRequest()">View</ion-button>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col size="4">senerath</ion-col>
-      <ion-col size="4">01/10/2020</ion-col>
-      <ion-col size="4">
-        <ion-button (click)="viewApprovedRequest()">View</ion-button>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col size="4">Jayaweera</ion-col>
-      <ion-col size="4">01/10/2020</ion-col>
-      <ion-col size="4">
-        <ion-button (click)="viewApprovedRequest()">View</ion-button>
-      </ion-col>
-    </ion-row>
+  
 
   </ion-grid>
 </ion-content>

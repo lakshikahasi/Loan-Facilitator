@@ -58,7 +58,7 @@ export class NewRequestViewPage implements OnInit {
   }
 
   viewApplicationForm(){
-    
+    this.router.navigate(['/applicationview']);
   }
 
   async Approve(){
@@ -68,7 +68,8 @@ export class NewRequestViewPage implements OnInit {
         {
           text: 'Yes',
         handler: () => {
-          this.postApproveData(this.loan_id, this.appid);
+          //this.postApproveData(this.loan_id, this.appid);
+          this.router.navigate(['/approveloan']);
         }
         },
         {
