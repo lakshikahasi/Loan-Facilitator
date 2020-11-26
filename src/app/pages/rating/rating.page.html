@@ -14,30 +14,29 @@
   <br>
 
   <ion-card class="ion-padding">
-    <div>
       <ion-radio-group>
-        <ion-radio name="star" value="1"></ion-radio>
-        <ion-radio  value="2"> </ion-radio>
-        <ion-radio  value="3"> </ion-radio>
-        <ion-radio value="4"> </ion-radio>
-        <ion-radio value="5"> </ion-radio>
+        <ion-row>
+          <ion-col><ion-radio color="warning" name="star" value="1"></ion-radio></ion-col>
+          <ion-col><ion-radio color="warning" value="2"> </ion-radio></ion-col>
+          <ion-col><ion-radio color="warning" value="3"> </ion-radio></ion-col>
+          <ion-col><ion-radio color="warning" value="4"> </ion-radio></ion-col>
+          <ion-col><ion-radio color="warning" value="5"> </ion-radio></ion-col>
+        </ion-row> 
       </ion-radio-group>
-    </div> 
+
+      <ion-button shape="round" color="success" (click)="submit()">Submit</ion-button> 
   
     <br>
-  
-    <ion-button (click)="Onclick()">Submit</ion-button>
-  </ion-card>
 
-
-  <!-- <div class="rating">
-    <input type="radio" (click)=Onclick() name="star" id="star1"><label for="star1"></label>
-    <input type="radio" (click)=Onclick() name="star" id="star2"><label for="star2"></label>
-    <input type="radio" (click)=Onclick() name="star" id="star3"><label for="star3"></label>
-    <input type="radio" (click)=Onclick() name="star" id="star4"><label for="star4"></label>
-    <input type="radio" (click)=Onclick() name="star" id="star5"><label for="star5"></label>
-  </div>
+    <!-- <div class="rating">
+      <input type="radio" (click)=Onclick() name="star" color="warning" id="star1"><label for="star1"></label>
+      <input type="radio" (click)=Onclick() name="star" color="warning" id="star2"><label for="star2"></label>
+      <input type="radio" (click)=Onclick() name="star" id="star3"><label for="star3"></label>
+      <input type="radio" (click)=Onclick() name="star" id="star4"><label for="star4"></label>
+      <input type="radio" (click)=Onclick() name="star" width="4em" height="4em" id="star5"><label for="star5"></label>
+    </div>
 
   <button shape="round" (click)="submit()">Submit</button> -->
+  </ion-card>
 
 </ion-content>
