@@ -58,7 +58,7 @@ export class NewRequestViewPage implements OnInit {
   }
 
   viewApplicationForm(){
-    
+    this.router.navigate(['/application-form-view']);
   }
 
   async Approve(){

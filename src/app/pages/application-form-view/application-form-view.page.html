@@ -1,9 +1,91 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>applicationFormView</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="new-request-view"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Application Form</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content fullscreen>
+  
+  <ion-card (click)="set()">
+    <ion-item>
+      <ion-icon name="person-outline" slot="start"></ion-icon>
+      <ion-icon name="{{icon}}" slot="end"></ion-icon>
+      <ion-label>Personal Details</ion-label>
+    </ion-item>
+  </ion-card>
 
+  <ion-card *ngIf="hideMe">
+    <ion-card *ngFor='let item of items'>
+      <ion-grid>
+
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Name with Initials</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.choose}} {{item.nameini}}</ion-card-subtitle>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Full name</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.namefull}}</ion-card-subtitle>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Private address</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.address}}</ion-card-subtitle>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Telephone Number</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.TpNo}}</ion-card-subtitle>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Date Of Birth</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.dob}}</ion-card-subtitle>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>NIC No </b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.nic}}</ion-card-subtitle>
+          </ion-col> 
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Email Address </b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.email}}</ion-card-subtitle>
+          </ion-col> 
+        </ion-row>
+
+      </ion-grid>
+    </ion-card>
+  </ion-card>
+   
 </ion-content>

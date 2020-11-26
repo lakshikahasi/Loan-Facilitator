@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="payment-confirm"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Rate customer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <br>
+  <br>
+  <br>
+
+  <ion-card class="ion-padding">
+    <div>
+      <ion-radio-group>
+        <ion-radio name="star" value="1"></ion-radio>
+        <ion-radio  value="2"> </ion-radio>
+        <ion-radio  value="3"> </ion-radio>
+        <ion-radio value="4"> </ion-radio>
+        <ion-radio value="5"> </ion-radio>
+      </ion-radio-group>
+    </div> 
+  
+    <br>
+  
+    <ion-button (click)="Onclick()">Submit</ion-button>
+  </ion-card>
+
+
+  <!-- <div class="rating">
+    <input type="radio" (click)=Onclick() name="star" id="star1"><label for="star1"></label>
+    <input type="radio" (click)=Onclick() name="star" id="star2"><label for="star2"></label>
+    <input type="radio" (click)=Onclick() name="star" id="star3"><label for="star3"></label>
+    <input type="radio" (click)=Onclick() name="star" id="star4"><label for="star4"></label>
+    <input type="radio" (click)=Onclick() name="star" id="star5"><label for="star5"></label>
+  </div>
+
+  <button shape="round" (click)="submit()">Submit</button> -->
+
+</ion-content>
