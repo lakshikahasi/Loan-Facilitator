@@ -114,6 +114,14 @@ const routes: Routes = [
     path: 'approveloan',
     loadChildren: () => import('./pages/approveloan/approveloan.module').then( m => m.ApproveloanPageModule)
   },
+  {
+    path: 'approvereject',
+    loadChildren: () => import('./pages/approvereject/approvereject.module').then( m => m.ApproverejectPageModule)
+  },
+  {
+    path: 'obtained',
+    loadChildren: () => import('./pages/obtained/obtained.module').then( m => m.ObtainedPageModule)
+  },
 
 ];
 

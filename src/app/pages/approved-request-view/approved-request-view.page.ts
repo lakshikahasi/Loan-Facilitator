@@ -25,6 +25,14 @@ export class ApprovedRequestViewPage implements OnInit {
     public accessPr: AccessProviders,
     private http: HttpClient,) { }
 
+    doRefresh(event) {  
+      console.log('Pull Event Triggered!');  
+      setTimeout(() => {  
+        //this.dummyList = Array(10);  
+        event.target.complete();  
+      }, 2000);  
+    }
+
   ngOnInit() {
     this.storage.get("storage_appid").then((res)=>{
       console.log(res);
@@ -36,15 +44,46 @@ export class ApprovedRequestViewPage implements OnInit {
       });
     });
 
+    
+
 
   }
 
-  viewApprovedPersonalInfo(){
+
+  viewApprovedPersonalInfo(event){
+    console.log(event.target.id);
+    this.dat=event.target.id;
+    console.log(this.dat);
+    this.storage.set('storage_appid',this.dat);
+
     this.router.navigate(['/personal-details-view'])
+
+
+    
   }
 
   viewApprovedApplicationForm(){
     this.router.navigate(['/applicationview'])
+  }
+
+  reject(event){
+    console.log(event.target.id);
+    this.dat=event.target.id;
+    console.log(this.dat);
+    this.storage.set('storage_appid',this.dat);
+
+    this.router.navigate(['/approvereject']);
+
+
+  }
+
+  obtain(event){
+    console.log(event.target.id);
+    this.dat=event.target.id;
+    console.log(this.dat);
+    this.storage.set('storage_appid',this.dat);
+    
+    this.router.navigate(['/obtained']);
   }
 
 }
