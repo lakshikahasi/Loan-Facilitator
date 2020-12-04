@@ -41,8 +41,6 @@ export class NewRequestsPage implements OnInit {
         console.log(this.items.loan_name);
         //console.log(this.bank_id);
         //console.log(res);
-
-
       });
 
     });
@@ -61,13 +59,5 @@ export class NewRequestsPage implements OnInit {
   
     this.router.navigate(['/new-request-loan']);
   }
-
-  /* checkNewAswenna(){
-    this.router.navigate(['/new-request-loan']);
-  }
-
-  checkNewNCRCS(){
-
-  } */
 
 }
