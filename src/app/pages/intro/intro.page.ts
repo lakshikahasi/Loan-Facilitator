@@ -33,11 +33,11 @@ export class IntroPage implements OnInit {
 
       this.http.get(AccessProviders.server+'/bankDetails/'+this.bank_id).map(res => res).subscribe(res =>{
         this.items=res;
-        console.log(res);
+        console.log('bank details', res);
         this.bank_logo = this.items.bank_logo;
-        console.log(this.bank_logo);
+        console.log('bank logo is', this.bank_logo);
         this.bank_id=this.items.bank_id;
-        console.log(this.bank_id);
+        console.log('bank id is', this.bank_id);
         this.bank_name = this.items.bank_name;
       });
     });

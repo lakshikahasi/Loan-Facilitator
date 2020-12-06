@@ -31,8 +31,8 @@ export class ObtainedLoansPage implements OnInit {
       console.log('bank id is',  val.bank_id);
       this.bank_id=val.bank_id;
 
-      this.http.get(AccessProviders.server+'/getLoans/'+this.bank_id).map(res => res).subscribe(res=>{ 
-        this.items=res;
+      this.http.get(AccessProviders.server+'/getLoans/'+this.bank_id).map(res => res).subscribe((res:any)=>{ 
+        this.items=res.message;
         console.log(this.items);
         console.log(this.items.loan_name);
         //console.log(this.bank_id);

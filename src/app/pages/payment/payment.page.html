@@ -15,7 +15,7 @@
     <ion-card>
       <ion-input type="text" placeholder="NIC NO" [(ngModel)]="nic"></ion-input>
     </ion-card>
-    <ion-button expand="block" (click)="search()">
+    <ion-button expand="block" id="{{nic}}" (click)="Search($event)">
       <ion-icon name="search-outline"></ion-icon>
       Search
     </ion-button>

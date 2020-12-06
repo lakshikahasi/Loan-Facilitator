@@ -35,19 +35,17 @@ export class PaymentConfirmPage implements OnInit {
 
   showDetails(){
     this.storage.get('storage_XXX').then((val) => {
-      console.log('bank id is',  val.bank_id);
-      this.nic=val.bank_id;
+      console.log('bank id is',  val.nic);
+      this.nic=val.nic;
 
-      this.http.get(AccessProviders.server+'/getFarmerLoans/'+this.nic+this.bank_id).map(res => res).subscribe(res=>{ 
+      this.http.get(AccessProviders.server+'/getFarmerLoans2/'+this.nic).map(res => res).subscribe(res=>{ 
         this.items=res;
-        console.log(this.items);
-        console.log(this.items.amount);
+        console.log('payment info are ', this.items);
+        console.log('payment amount is ', this.items.amount);
         //console.log(this.bank_id);
         //console.log(res);
-
-
       });
-
+      //this.router.navigate(['/payment-confirm']);
     });
   }
 

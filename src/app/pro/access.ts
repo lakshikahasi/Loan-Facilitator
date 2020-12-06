@@ -25,6 +25,13 @@ export class Borrower {
   }
 }
 
+/* export class UpdBorrower {
+  loan_id: string;
+  constructor(loan_id:string){
+    this.loan_id = loan_id;
+  }
+} */
+
 @Injectable({
   providedIn: 'root' // just before your class
 })
@@ -35,8 +42,9 @@ export class AccessProviders{
  currentUser: User;
  nic:Borrower;
  isLogged: Boolean = false;
- 
-
+ //loan_id:UpdBorrower;
+ loan_id;
+  
    constructor(
        
        public http:HttpClient,
@@ -122,6 +130,56 @@ export class AccessProviders{
       
       
   }*/
-     
+
+  postreasonapp(body){
+    let headers=new HttpHeaders({
+        'Content-Type':'applicationJson,charset-UTF-8'
+    });
+    let options={
+         headers:headers
+    }
+    
+    return this.http.post(AccessProviders.server+'/approveloan',JSON.stringify(body),{
+        headers: new HttpHeaders().set('Content-Type', 'application/json'),
+      }).timeout(59000)
+    . map(res=>res);
+    
+    
+}
+
+
+postLoanUpdate(body, loan_id){
+  let headers=new HttpHeaders({
+    'Content-Type':'applicationJson,charset-UTF-8'
+  });
+  let options={
+    headers:headers
+  }
+          
+  /* return this.http.post(this.server+'/createLoan',JSON.stringify(body),{
+    headers: new HttpHeaders().set('Content-Type', 'application/json'),
+ }).timeout(59000)
+*/
+  return this.http.post(AccessProviders.server+'/updateLoan/'+loan_id,JSON.stringify(body),{
+     headers: new HttpHeaders().set('Content-Type', 'application/json'),
+  })//.timeout(59000)
+  . map(res=>res);
+}     
+
+
+postBorrower(body, nic){
+  let headers=new HttpHeaders({
+    'Content-Type':'applicationJson,charset-UTF-8'
+});
+let options={
+    headers:headers
+}
+this.currentUser = new User(body.nic);
+this.isLogged = true;
+return this.http.post(AccessProviders.server+'/getFarmerLoans/'+nic, JSON.stringify(body),{
+    headers: new HttpHeaders().set('Content-Type', 'application/json'),
+  })
+. map(res=>res);
+}
         
 }

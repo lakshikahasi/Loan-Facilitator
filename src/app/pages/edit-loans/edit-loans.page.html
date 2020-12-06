@@ -9,59 +9,66 @@
 
 <ion-content>
 
-  <ion-item style="color:success">
+<!--   <ion-item (click)=displayLoanDetails($event) style="color:success">
     <ion-label >Choose the Loan</ion-label>
     <ion-select interface="popover" >
-      <ion-select-option value="aswenna">Aswenna</ion-select-option>
-      <ion-select-option value="NCRCS">NCRCS</ion-select-option>
+      <ion-select-option *ngFor="let item of items" id="{{item.loan_id}}">{{item.loan_name}}</ion-select-option>
     </ion-select>
-  </ion-item>
+  </ion-item> -->
+
+  <br>
+  <ion-label class="ion-padding">Choose the loan</ion-label>
+  <ion-row *ngFor='let item of items' class="ion-padding">
+    <ion-col>
+      <ion-button (click)=displayLoanDetails($event) id="{{item.loan_id}}">{{item.loan_name}}</ion-button>
+    </ion-col>
+  </ion-row>
 
   <ion-list class="ion-padding">
 
     <ion-item>
-      <ion-label position="floating" color="success">Name of the Scheme</ion-label>  
-      <ion-textarea rows="1" cols="50"></ion-textarea>
+      <ion-label position="stacked" color="success">Name of the Scheme</ion-label>  
+      <ion-textarea rows="1" cols="50" [(ngModel)]="loan_name" placeholder="{{loan_name}}"></ion-textarea>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating" color="success">General Information</ion-label>  
-      <ion-textarea rows="3" cols="50"></ion-textarea>
+      <ion-label position="stacked" color="success">General Information</ion-label>  
+      <ion-textarea rows="3" cols="50" [(ngModel)]="genera_info" placeholder="{{genera_info}}"></ion-textarea>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating" color="success">Specific Information</ion-label>  
-      <ion-textarea rows="5" cols="50"></ion-textarea>
+      <ion-label position="stacked" color="success">Specific Information</ion-label>  
+      <ion-textarea rows="5" cols="50" [(ngModel)]="specific_info" placeholder="{{specific_info}}"></ion-textarea>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating" color="success">Eligible Borrowers</ion-label>  
-      <ion-textarea rows="2" cols="50"></ion-textarea>
+      <ion-label position="stacked" color="success">Eligible Borrowers</ion-label>  
+      <ion-textarea rows="2" cols="50" [(ngModel)]="eligible_borrowers" placeholder="{{eligible_borrowers}}"></ion-textarea>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating" color="success">Eligible Crops</ion-label>  
-      <ion-textarea rows="5" cols="50"></ion-textarea>
+      <ion-label position="stacked" color="success">Eligible Crops</ion-label>  
+      <ion-textarea rows="5" cols="50" [(ngModel)]="eligible_crops" placeholder="{{eligible_crops}}"></ion-textarea>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating" color="success">Maximum Loan Amount</ion-label>  
-      <ion-textarea rows="2" cols="50"></ion-textarea>
+      <ion-label position="stacked" color="success">Maximum Loan Amount</ion-label>  
+      <ion-textarea rows="2" cols="50" [(ngModel)]="maximum_loanamount" placeholder="{{maximum_loanamount}}"></ion-textarea>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating" color="success">Rate of Interest</ion-label>  
-      <ion-textarea rows="4" cols="50"></ion-textarea>
+      <ion-label position="stacked" color="success">Rate of Interest</ion-label>  
+      <ion-textarea rows="4" cols="50" [(ngModel)]="Rateofinterest" placeholder="{{Rateofinterest}}"></ion-textarea>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating" color="success">Repayment Period</ion-label>  
-      <ion-textarea rows="4" cols="50"></ion-textarea>
+      <ion-label position="stacked" color="success">Repayment Period</ion-label>  
+      <ion-textarea rows="4" cols="50" [(ngModel)]="Repaymentperiod" placeholder="{{Repaymentperiod}}"></ion-textarea>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating" color="success">More information</ion-label>  
-      <ion-textarea rows="4" cols="50"></ion-textarea>
+      <ion-label position="stacked" color="success">More information</ion-label>  
+      <ion-textarea rows="4" cols="50" [(ngModel)]="more_info" placeholder="{{more_info}}"></ion-textarea>
     </ion-item>
 
     <!-- <ion-item>
@@ -70,8 +77,8 @@
     </ion-item> -->
 
     <ion-item>
-      <ion-label position="floating" color="success">Image for loan scheme</ion-label>  
-      <ion-textarea rows="4" cols="50"></ion-textarea>
+      <ion-label position="stacked" color="success">Image for loan scheme</ion-label>  
+      <ion-textarea rows="4" cols="50" [(ngModel)]="loan_logo" placeholder="{{loan_logo}}"></ion-textarea>
     </ion-item>
 
     <!-- <ion-item>
@@ -79,7 +86,7 @@
       <ion-textarea rows="3" cols="50"></ion-textarea>
     </ion-item>  -->
 
-    <ion-button size="small" class="ion-padding" color="success" (click)="createNewLoan()">Submit</ion-button>
+    <ion-button size="small" class="ion-padding" color="success" (click)="updateLoan()">Submit</ion-button>
 
   </ion-list>
 

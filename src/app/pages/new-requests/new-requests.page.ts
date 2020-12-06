@@ -35,14 +35,12 @@ export class NewRequestsPage implements OnInit {
       console.log('bank id is',  val.bank_id);
       this.bank_id=val.bank_id;
 
-      this.http.get(AccessProviders.server+'/getLoans/'+this.bank_id).map(res => res).subscribe(res=>{ 
-        this.items=res;
-        console.log(this.items);
-        console.log(this.items.loan_name);
+      this.http.get(AccessProviders.server+'/getLoans/'+this.bank_id).map(res => res).subscribe((res:any)=>{ 
+        this.items=res.message;
+        console.log('items are ', this.items);
+        console.log('loan name of first item is', this.items[0].loan_name);
         //console.log(this.bank_id);
         //console.log(res);
-
-
       });
 
     });
@@ -61,13 +59,5 @@ export class NewRequestsPage implements OnInit {
   
     this.router.navigate(['/new-request-loan']);
   }
-
-  /* checkNewAswenna(){
-    this.router.navigate(['/new-request-loan']);
-  }
-
-  checkNewNCRCS(){
-
-  } */
 
 }
