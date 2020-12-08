@@ -53,8 +53,8 @@ export class EditLoansPage implements OnInit {
       this.bank_id = val.bank_id;
       console.log('this.bank_id is', this.bank_id);
 
-      this.http.get(AccessProviders.server+'/getLoans/'+this.bank_id).map(res => res).subscribe(res=>{ 
-        this.items=res;
+      this.http.get(AccessProviders.server+'/getLoans/'+this.bank_id).map(res => res).subscribe((res:any)=>{ 
+        this.items=res.message;
 
         //console.log('array or not ', Array.isArray(res));
 

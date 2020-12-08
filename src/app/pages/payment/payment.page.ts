@@ -38,7 +38,10 @@ export class PaymentPage implements OnInit {
   getBorrowers(){
     this.storage.get('storage_XXX').then((val)=>{
       console.log('bank id is ', val.bank_id);
-    })
+      console.log('val value is ', val);
+
+      
+    });
   }
 
 
@@ -51,54 +54,7 @@ export class PaymentPage implements OnInit {
   }
 
   async Search(event:any){
-    /* if(this.nic==""){
-      console.log('Enter a nic');
-    }else{
-      this.disableButton = true;
-      const loader = await this.loadingCtrl.create({
-        message:'wait..',
-      });
-      loader.present();
-
-      return new Promise(resoler=>{
-        let body={
-          nic:this.nic,
-        }
-        this.accessPr.postSearch(body).map(res=>res).subscribe((res:any)=>{
-           if(res.status==true){
-            //loader.dismiss();
-            this.disableButton=false;
-            this.presentToast(res.message);
-            this.storage.set('storage_nic', res.data);
-            console.log('data are ', res.data);
-            this.router.navigate(['/payment-confirm']);
-          }else{
-            //loader.dismiss();
-            this.disableButton=false;
-            this.presentToast(res.message);
-          }
-        });
-        if(res.status==true){
-          loader.dismiss();
-          this.disableButton=false;
-          //this.presentToast(data.message);
-          this.presentToast("Successfully updated the loan");
-          this.router.navigate(['/intro']);
-
-        }else{
-          loader.dismiss();
-          this.disableButton=false;
-          this.presentToast(res.message);
-        }
-      },(err=>{
-        loader.dismiss();
-        this.disableButton=false;
-        this.presentAlert('Timeout');
-      })
-      );
-      });
-    }
-     */
+    
     console.log('myyy id taken is', event.target.id);
 
 
@@ -121,23 +77,27 @@ export class PaymentPage implements OnInit {
           if(res.status==true){
             loader.dismiss();
             this.disableButton=false;
-            this.presentToast(res.message);
-            
-            //this.navCtrl.push(paymentConfirm, {id:nic});
 
-            this.router.navigate(['/payment-confirm']);
             console.log('nic data ', res.data);
             this.items=res.data;
             console.log('res data ',this.items);
-            console.log('nic is ',this.items[0].nic);
 
-            this.nic=event.target.id;
-            console.log('id taken done ', this.nic);
-            this.storage.set('storage_nic', this.nic);
-            this.storage.get('storage_nic').then((res)=>{
-            console.log('abc is ', res);
+            this.storage.set('storage_borrower', res.data);
+            console.log('set storage ', res.data);
+            this.storage.get('storage_borrower').then((val:any)=>{
+              console.log('val is', val);
+              this.items=res;
+              console.log('items are ', this.items.data);
+              console.log('nic is ', this.items.data[0].nic);
             });
-            
+
+            if(this.items[0].nic){
+              this.presentToast('valued customer')
+              this.router.navigate(['/payment-confirm']);
+            }/* else{
+              this.presentToast('Not a borrower');
+            } */
+            //console.log('nic is ',this.items[0].nic);     
           }
 
           else{
@@ -151,28 +111,8 @@ export class PaymentPage implements OnInit {
           this.presentAlert('Timeout');
         }));
 
-      });
-
-      
+      });     
 }
-
-      /* try{
-        this.storage.get('storage_XXX').then((val) => {
-          console.log('bank id is',  val.bank_id);
-          //this.bank_id=val.bank_id;
-    
-          this.http.get(AccessProviders.server+'/getFarmerLoans/'+this.nic).map(res => res).subscribe(res=>{ 
-            this.items=res;
-            console.log(this.items);
-            console.log(this.items.loan_name);
-            //console.log(this.bank_id);
-            //console.log(res);
-          });
-          this.router.navigate(['/payment-confirm']);
-        });
-      }catch{
-        console.log('wrong nic')
-      } */
     }
   
 
