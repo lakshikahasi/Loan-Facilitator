@@ -20,55 +20,55 @@
   <ion-label class="ion-padding">Choose the loan</ion-label>
   <ion-row *ngFor='let item of items' class="ion-padding">
     <ion-col>
-      <ion-button (click)=displayLoanDetails($event) id="{{item.loan_id}}">{{item.loan_name}}</ion-button>
+      <ion-button color="success" (click)=displayLoanDetails($event) id="{{item.loan_id}}">{{item.loan_name}}</ion-button>
     </ion-col>
   </ion-row>
 
   <ion-list class="ion-padding">
 
     <ion-item>
-      <ion-label position="stacked" color="success">Name of the Scheme</ion-label>  
-      <ion-textarea rows="1" cols="50" [(ngModel)]="loan_name" placeholder="{{loan_name}}"></ion-textarea>
+      <ion-label position="stacked">Name of the Scheme</ion-label>  
+      <ion-textarea color="medium" rows="3" cols="50" [(ngModel)]="loan_name" placeholder="{{loan_name}}"></ion-textarea>
     </ion-item>
 
     <ion-item>
-      <ion-label position="stacked" color="success">General Information</ion-label>  
-      <ion-textarea rows="3" cols="50" [(ngModel)]="genera_info" placeholder="{{genera_info}}"></ion-textarea>
+      <ion-label position="stacked">General Information</ion-label>  
+      <ion-textarea color="medium" rows="8" cols="50" [(ngModel)]="genera_info" placeholder="{{genera_info}}"></ion-textarea>
     </ion-item>
 
     <ion-item>
-      <ion-label position="stacked" color="success">Specific Information</ion-label>  
-      <ion-textarea rows="5" cols="50" [(ngModel)]="specific_info" placeholder="{{specific_info}}"></ion-textarea>
+      <ion-label position="stacked">Specific Information</ion-label>  
+      <ion-textarea color="medium" rows="5" cols="50" [(ngModel)]="specific_info" placeholder="{{specific_info}}"></ion-textarea>
     </ion-item>
 
     <ion-item>
-      <ion-label position="stacked" color="success">Eligible Borrowers</ion-label>  
-      <ion-textarea rows="2" cols="50" [(ngModel)]="eligible_borrowers" placeholder="{{eligible_borrowers}}"></ion-textarea>
+      <ion-label position="stacked">Eligible Borrowers</ion-label>  
+      <ion-textarea color="medium" rows="6" cols="50" [(ngModel)]="eligible_borrowers" placeholder="{{eligible_borrowers}}"></ion-textarea>
     </ion-item>
 
     <ion-item>
-      <ion-label position="stacked" color="success">Eligible Crops</ion-label>  
-      <ion-textarea rows="5" cols="50" [(ngModel)]="eligible_crops" placeholder="{{eligible_crops}}"></ion-textarea>
+      <ion-label position="stacked">Eligible Crops</ion-label>  
+      <ion-textarea color="medium" rows="2" cols="50" [(ngModel)]="eligible_crops" placeholder="{{eligible_crops}}"></ion-textarea>
     </ion-item>
 
     <ion-item>
-      <ion-label position="stacked" color="success">Maximum Loan Amount</ion-label>  
-      <ion-textarea rows="2" cols="50" [(ngModel)]="maximum_loanamount" placeholder="{{maximum_loanamount}}"></ion-textarea>
+      <ion-label position="stacked">Maximum Loan Amount</ion-label>  
+      <ion-textarea color="medium" rows="2" cols="50" [(ngModel)]="maximum_loanamount" placeholder="{{maximum_loanamount}}"></ion-textarea>
     </ion-item>
 
     <ion-item>
-      <ion-label position="stacked" color="success">Rate of Interest</ion-label>  
-      <ion-textarea rows="4" cols="50" [(ngModel)]="Rateofinterest" placeholder="{{Rateofinterest}}"></ion-textarea>
+      <ion-label position="stacked">Rate of Interest</ion-label>  
+      <ion-textarea color="medium" rows="4" cols="50" [(ngModel)]="Rateofinterest" placeholder="{{Rateofinterest}}"></ion-textarea>
     </ion-item>
 
     <ion-item>
-      <ion-label position="stacked" color="success">Repayment Period</ion-label>  
-      <ion-textarea rows="4" cols="50" [(ngModel)]="Repaymentperiod" placeholder="{{Repaymentperiod}}"></ion-textarea>
+      <ion-label position="stacked">Repayment Period</ion-label>  
+      <ion-textarea color="medium" rows="3" cols="50" [(ngModel)]="Repaymentperiod" placeholder="{{Repaymentperiod}}"></ion-textarea>
     </ion-item>
 
     <ion-item>
-      <ion-label position="stacked" color="success">More information</ion-label>  
-      <ion-textarea rows="4" cols="50" [(ngModel)]="more_info" placeholder="{{more_info}}"></ion-textarea>
+      <ion-label position="stacked">More information</ion-label>  
+      <ion-textarea color="medium" rows="4" cols="50" [(ngModel)]="more_info" placeholder="{{more_info}}"></ion-textarea>
     </ion-item>
 
     <!-- <ion-item>
@@ -77,8 +77,8 @@
     </ion-item> -->
 
     <ion-item>
-      <ion-label position="stacked" color="success">Image for loan scheme</ion-label>  
-      <ion-textarea rows="4" cols="50" [(ngModel)]="loan_logo" placeholder="{{loan_logo}}"></ion-textarea>
+      <ion-label position="stacked">Image for loan scheme</ion-label>  
+      <ion-textarea color="medium" rows="4" cols="50" [(ngModel)]="loan_logo" placeholder="{{loan_logo}}"></ion-textarea>
     </ion-item>
 
     <!-- <ion-item>
@@ -86,7 +86,7 @@
       <ion-textarea rows="3" cols="50"></ion-textarea>
     </ion-item>  -->
 
-    <ion-button size="small" class="ion-padding" color="success" (click)="updateLoan()">Submit</ion-button>
+    <ion-button shape="round" size="small" class="ion-padding" color="success" (click)="updateLoan()">Submit</ion-button>
 
   </ion-list>
 
