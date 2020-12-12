@@ -11,13 +11,18 @@
   <br>
   <br>
   <!--<ion-card>*ngFor='let item of items'-->
-    <ion-row *ngFor='let item of items'>
-      <ion-col>
-        <!--<img class="logi-img" src="/assets/img/People's.jpg" alt="logo">-->
-        <ion-button color="success" expand="block" size="default" (click)="viewApplicants($event)" id="{{item.loan_id}}">{{item.loan_name}}</ion-button>
-      </ion-col>
-      <br>
-    </ion-row>
+    <div *ngFor='let item of items'>
+      <ion-row>
+        <ion-col>
+          <!--<img class="logi-img" src="/assets/img/People's.jpg" alt="logo">-->
+          <ion-button color="success" expand="block" size="default" (click)="viewApplicants($event)" id="{{item.loan_id}}">{{item.loan_name}}</ion-button>
+        </ion-col>
+        <br>
+      </ion-row>
+      <ion-row>
+        <br>
+      </ion-row>
+    </div>
   <!--</ion-card>-->
   
   <br>

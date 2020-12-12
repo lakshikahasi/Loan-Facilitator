@@ -10,7 +10,7 @@ ion-img {
 }
 
 .slide-one {
-    background :url('../../../assets/img/background(b).jpg') 0 0/ 100% 100% no-repeat;
+    //background :url('../../../assets/img/background/img1.png') 0 0/ 120% 100% no-repeat;
     color :#fff;
 }
 
@@ -31,7 +31,25 @@ ion-img {
 
 ion-content{
     //--background: var(--ion-color-primary);
-    --background :url('../../../assets/img/background(b).jpg') 0 0/ 100% 100% no-repeat;
+    //--background :url('../../../assets/img/background/img1.png') 0 0/ 100% 100% no-repeat;
     --color :#fff;
+}
+
+#frontimg {
+    //position:absolute;
+    left:13%;
+    top:33%;
+    max-width: 80%;
+}
+
+#font {
+    color: #152b1e;
+    position:static;
+}
+
+#slide2img {
+    left: 13%;
+    top: 43%;
+    max-width: 20%;
 }
 

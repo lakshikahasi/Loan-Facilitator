@@ -58,8 +58,8 @@ export class IntroPage implements OnInit {
     this.router.navigate(['/payment']);
   }
 
-  // toggle(){
-  //   console.log('hasini');
-  // }
+  slidesDidLoad(slides) {
+    slides.startAutoplay();
+  }
 
 }

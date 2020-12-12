@@ -5,19 +5,21 @@
 </ion-header>-->
 
 <ion-content>
-  <ion-slides pager = "true">
+
+  <ion-slides pager = "true" pager #mySlider class="slides" (ionSlidesDidLoad)="slidesDidLoad(mySlider)" speed="3000" color="success">
     <ion-slide class="slide-one">
-      <!-- <img src="/assets/icon/Farmer.png"> -->
-      <b><h1>GOVI - NAVODA</h1></b>
-      <p class="labelintro">FOR YOUR AGRICULTURAL LOAN PURPOSES</p>
+      <img id="frontimg" src="/assets/img/Background/img1.png" alt="abc">
+      <strong><h1 id="font">GOVI - NAVODA</h1></strong>
+      <p id="font" class="labelintro">FOR YOUR AGRICULTURAL LOAN PURPOSES</p>
     </ion-slide>
 
     <ion-slide class="slide-two">
-      <!-- <img src="/assets/icon/grass.png"> -->
-      <b><h1>Online Loan Facilitator</h1></b>
-      <p class="labelintro">For higher customer satisfaction</p>
-      <ion-button shape="round" color="success" align="center" (click)="openLogin()">Let's Login</ion-button>
+      <img id="slide2img" src="/assets/img/bank.jpg" alt="image here">
+      <b><h1 id="font">Online Loan Facilitator</h1></b>
+      <p id="font" class="labelintro">For higher customer satisfaction</p>
+      <ion-button id="font" shape="round" color="success" align="center" (click)="openLogin()">Let's Login</ion-button>
     </ion-slide>
-
+  
   </ion-slides>
+
 </ion-content>

@@ -28,15 +28,15 @@ export class NewRequestViewPage implements OnInit {
     public alertCtrl:AlertController,) { }
 
   ngOnInit() {
-    this.storage.get("storage_loan").then((val)=>{
+    /* this.storage.get("storage_loan").then((val)=>{
       console.log(val);
       this.loan_id=val;
-    });
+    }); */
     this.storage.get("storage_appid").then((val)=>{
       console.log(val);
       this.appid=val;
 
-      console.log(this.appid);
+      console.log('appid is ', this.appid);
       this.http.get(AccessProviders.server+'/getFarmerDetails/'+this.appid).map(res=>res).subscribe((res:any)=>{
       console.log(res);
       this.items=res.message;

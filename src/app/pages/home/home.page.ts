@@ -17,4 +17,8 @@ export class HomePage implements OnInit {
     this.router.navigate(['/login']);
   }
 
+  slidesDidLoad(slides) {
+    slides.startAutoplay();
+  }
+
 }

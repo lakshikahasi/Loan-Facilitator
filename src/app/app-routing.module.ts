@@ -119,6 +119,10 @@ const routes: Routes = [
     path: 'approveloan',
     loadChildren: () => import('./pages/approveloan/approveloan.module').then( m => m.ApproveloanPageModule)
   },
+  {
+    path: 'payment-details',
+    loadChildren: () => import('./pages/payment-details/payment-details.module').then( m => m.PaymentDetailsPageModule)
+  },
 ];
 
 @NgModule({

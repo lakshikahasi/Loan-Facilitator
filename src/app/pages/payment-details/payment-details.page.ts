@@ -4,14 +4,13 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Storage } from '@ionic/storage';
 import {HttpClient,HttpHeaders,HttpErrorResponse}  from '@angular/common/http';
 import { User, AccessProviders } from '../../pro/access';
-import { noUndefined } from '@angular/compiler/src/util';
 
 @Component({
-  selector: 'app-payment-confirm',
-  templateUrl: './payment-confirm.page.html',
-  styleUrls: ['./payment-confirm.page.scss'],
+  selector: 'app-payment-details',
+  templateUrl: './payment-details.page.html',
+  styleUrls: ['./payment-details.page.scss'],
 })
-export class PaymentConfirmPage implements OnInit {
+export class PaymentDetailsPage implements OnInit {
 
   nic:string="";
   bank_id:string="";
@@ -19,11 +18,6 @@ export class PaymentConfirmPage implements OnInit {
   //loan_name:string="";
   items:any;
   dat: any;
-  //amount;
-  //installmentValue;
-  //overall_payment_amount:any;
-
-  //overall_to_be_paid:any;
 
   length:number;
 
@@ -32,14 +26,11 @@ export class PaymentConfirmPage implements OnInit {
     private storage: Storage,
     public http: HttpClient,
     private acessPr: AccessProviders,
-  ) { }
+  ) {
+   }
 
   ngOnInit() {
     this.showDetails();
-  }
-
-  showMore(){
-    this.router.navigate(['/payment-details']);
   }
 
   showDetails(){
@@ -69,29 +60,10 @@ export class PaymentConfirmPage implements OnInit {
       }
       
     });
+  }
 
-
-    /* for(let i=0; i<length; i++){
-      this.storage.get('storage_borrower').then((val)=>{
-        console.log('obtain id is ', val.items[i].obtain_id);
-        this.obtain_id[i]=val.items[i].obtain_id;
-        console.log('this.obtain_id is ', this.obtain_id);
-  
-        this.http.get(AccessProviders.server+'/getPayments/'+this.obtain_id[i]).map(res=>res).subscribe((res:any)=>{
-          this.dat=res.message;
-    
-          console.log('data taken to res are ', res);
-          console.log('payments are ', this.dat);
-          console.log('A payment paid_amount is ', this.dat[0].paid_amount);
-        });
-  
-      });
-    } */
-
-    
-
-    //this.storage.set('storage_obtain_id', this.items.obtain_id);
-    //console.log('obtain storage is ', this.items.obtain_id);
+  updatePayment(){
+    this.router.navigate(['/payment-details']);
   }
 
 }

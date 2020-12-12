@@ -9,7 +9,7 @@
 
 <ion-content>
 
-<!--   <ion-item (click)=displayLoanDetails($event) style="color:success">
+<!--<ion-item (click)=displayLoanDetails($event) style="color:success">
     <ion-label >Choose the Loan</ion-label>
     <ion-select interface="popover" >
       <ion-select-option *ngFor="let item of items" id="{{item.loan_id}}">{{item.loan_name}}</ion-select-option>
@@ -38,12 +38,12 @@
 
     <ion-item>
       <ion-label position="stacked">Specific Information</ion-label>  
-      <ion-textarea color="medium" rows="5" cols="50" [(ngModel)]="specific_info" placeholder="{{specific_info}}"></ion-textarea>
+      <ion-textarea color="medium" rows="7" cols="50" [(ngModel)]="specific_info" placeholder="{{specific_info}}"></ion-textarea>
     </ion-item>
 
     <ion-item>
       <ion-label position="stacked">Eligible Borrowers</ion-label>  
-      <ion-textarea color="medium" rows="6" cols="50" [(ngModel)]="eligible_borrowers" placeholder="{{eligible_borrowers}}"></ion-textarea>
+      <ion-textarea color="medium" rows="7" cols="50" [(ngModel)]="eligible_borrowers" placeholder="{{eligible_borrowers}}"></ion-textarea>
     </ion-item>
 
     <ion-item>

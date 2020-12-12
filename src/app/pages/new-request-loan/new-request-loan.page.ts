@@ -34,7 +34,7 @@ export class NewRequestLoanPage implements OnInit {
 
       this.http.get(AccessProviders.server+'/getApplicationDetails/'+this.loan_id).map(res=>res).subscribe((res:any)=>{
         this.items=res.message;
-        console.log(this.items);
+        console.log('query okey', this.items);
       });
     });
   }

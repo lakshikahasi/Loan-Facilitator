@@ -38,7 +38,16 @@ export class ApprovedRequestLoanPage implements OnInit {
 
   view
 
-  viewApprovedRequest(){
+  viewApprovedRequest(event:any){
+    console.log(event.target.id);
+    this.dat=event.target.id;
+    console.log(this.dat);
+    this.storage.set('storage_appid', this.dat);
+
+    this.storage.get("storage_appid").then((res)=>{
+      console.log(res);
+    });
+
     this.router.navigate(['/approved-request-view']);
   }
 
