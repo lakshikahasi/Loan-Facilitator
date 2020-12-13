@@ -53,6 +53,11 @@
     <ion-toolbar translucent color="primary">
       <ion-title>{{bank_name}}</ion-title>
     </ion-toolbar>
+    <ion-toolbar id="header" color="primary">
+      <img class="center" src="/assets/img/bank_prof.jpg" alt="bank image"/>
+      <br>
+    </ion-toolbar>
+  
   </ion-header>
 
   <ion-content>
@@ -96,23 +101,23 @@
       </ion-item>
     </ion-menu-toggle>
 
-    <ion-menu-toggle>
+    <!-- <ion-menu-toggle>
       <ion-item>
         <ion-icon name="bag-check"></ion-icon>
         <ion-label>Privacy Policy</ion-label>
       </ion-item>
-    </ion-menu-toggle> 
+    </ion-menu-toggle>  -->
   
     <ion-item>
       <b>Settings</b>
     </ion-item>
 
-    <ion-menu-toggle>
+    <!-- <ion-menu-toggle>
       <ion-item>
         <ion-icon name="create"></ion-icon>
         <ion-label>Edit Profile</ion-label>
       </ion-item>
-    </ion-menu-toggle>
+    </ion-menu-toggle> -->
 
     <ion-menu-toggle>
       <ion-item>
@@ -123,7 +128,7 @@
 
     <ion-item routerLink="/payment">
       <ion-icon name="warning"></ion-icon>
-      <ion-label>Logout</ion-label>
+      <ion-label>Sign out</ion-label>
     </ion-item>
 
   </ion-content>

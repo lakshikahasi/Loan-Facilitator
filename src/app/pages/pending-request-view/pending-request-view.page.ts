@@ -19,7 +19,7 @@ export class PendingRequestViewPage implements OnInit {
   }
 
   viewPendingApplicationForm(){
-
+    this.router.navigate(['/application-form-view']);
   }
 
 }

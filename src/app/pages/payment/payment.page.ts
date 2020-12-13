@@ -89,12 +89,10 @@ export class PaymentPage implements OnInit {
               this.items=res;
               console.log('items are ', this.items.data);
               console.log('nic is ', this.items.data[0].nic);
+              this.router.navigate(['/payment-confirm']);
             });
 
-            if(this.items[0].nic){
-              this.presentToast('valued customer')
-              this.router.navigate(['/payment-confirm']);
-            }/* else{
+            /* else{
               this.presentToast('Not a borrower');
             } */
             //console.log('nic is ',this.items[0].nic);     

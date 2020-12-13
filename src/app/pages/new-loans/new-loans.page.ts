@@ -89,8 +89,8 @@ export class NewLoansPage implements OnInit {
           if(data.status==true){
             loader.dismiss();
             this.disableButton=false;
-            //this.presentToast(data.message);
-            this.presentToast("Successfully added the loan");
+            this.presentToast(data.message);
+            //this.presentToast("Successfully added the loan");
             this.router.navigate(['/intro']);
 
           }else{

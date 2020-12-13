@@ -21,7 +21,7 @@
 
   <br>
 
-  <ion-grid>
+  <!-- <ion-grid>
     <ion-row class="bold">
       <ion-col size="3">Application ID</ion-col>
       <ion-col size="3">Name</ion-col>
@@ -32,11 +32,27 @@
     <br>
 
     <ion-row *ngFor='let item of items'>
-      <ion-col size="3">{{item.application_id}}</ion-col>
-      <ion-col size="3">{{item.nameini}}</ion-col>
-      <ion-col size="3">{{item.obtained_date}}</ion-col>
+      <ion-col class="col" size="3">{{item.application_id}}</ion-col>
+      <ion-col class="col" size="3">{{item.nameini}}</ion-col>
+      <ion-col class="col" size="3">{{item.obtained_date}}</ion-col>
       <ion-col size="3">
         <ion-button shape="round" (click)="viewObtainedLoans($event)" id="{{item.application_id}}">View</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid> -->
+
+  <ion-grid>
+    <ion-row class="bold">
+      <ion-col size="4">Name</ion-col>
+      <ion-col size="4">Date</ion-col>
+    </ion-row>
+
+    <ion-row *ngFor='let item of items'>
+      <ion-col class="col" size="4.5">{{item.nameini}}</ion-col>
+      <ion-col class="col" size="4.5">{{item.date}}</ion-col>
+      <ion-col size="3">
+        <ion-button color="success" (click)="viewObtainedLoans($event)" id="{{item.id}}">View</ion-button>
       </ion-col>
     </ion-row>
 

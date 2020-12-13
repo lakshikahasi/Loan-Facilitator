@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="approved-requests"></ion-back-button>
     </ion-buttons>
-    <ion-title>Applicant's name(Sunil)</ion-title>
+    <ion-title>mrs. M.K.Weerasinghe</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -23,4 +23,20 @@
     <br>
   </ion-card>
   <br>
+
+  <ion-card>
+    <!-- <ion-grid *ngFor='let item of items'> -->
+      <ion-grid> 
+    <ion-row >
+      <ion-label size="4"><b>When Come</b></ion-label>
+      <ion-col><ion-textarea color="medium" rows="2" cols="50" [(ngModel)]="specific_info" placeholder="{{specific_info}}"></ion-textarea></ion-col>
+      <!-- <ion-col size="8">{{item.date_you_come}}</ion-col> -->
+    </ion-row>
+    <ion-row>
+      <ion-label size="4"><b>Special Notices</b></ion-label>
+      <ion-textarea color="medium" rows="7" cols="50" [(ngModel)]="specific_info" placeholder="{{specific_info}}"></ion-textarea>
+      <!-- <ion-col size="8">{{item.special_notices}}</ion-col> -->
+    </ion-row>
+  </ion-grid>
+  </ion-card>
 </ion-content>

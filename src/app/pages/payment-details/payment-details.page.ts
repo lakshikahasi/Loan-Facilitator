@@ -30,7 +30,7 @@ export class PaymentDetailsPage implements OnInit {
    }
 
   ngOnInit() {
-    this.showDetails();
+    //this.showDetails();
   }
 
   showDetails(){
@@ -63,7 +63,7 @@ export class PaymentDetailsPage implements OnInit {
   }
 
   updatePayment(){
-    this.router.navigate(['/payment-details']);
+    this.router.navigate(['/rating']);
   }
 
 }
