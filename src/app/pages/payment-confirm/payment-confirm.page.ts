@@ -47,7 +47,7 @@ export class PaymentConfirmPage implements OnInit {
       console.log('val taken by storage borrower',  val);
       this.items=val;
       console.log('items are ', this.items);
-      console.log('application id is', this.items[0].id);
+      console.log('amount here is', this.items[0].amount);
 
 
       /* this.installmentValue=this.items[0].amount/this.items[0].no_of_installment;
@@ -60,7 +60,8 @@ export class PaymentConfirmPage implements OnInit {
 
       for(let i=0; i<length;i++){
         this.items[i].period_years=this.items[i].no_of_installment/12;
-        this.items[i].interest=this.items[i].amount*this.items[i].interest_rate/100*this.items[i].no_of_installment/12;
+        //this.items[i].interest=this.items[i].amount*this.items[i].interest_rate/100*this.items[i].no_of_installment/12;
+        this.items[i].interest=this.items[i].amount*this.items[i].interest_rate/100/12;
         this.items[i].installment_without_interest=this.items[i].amount/this.items[i].no_of_installment;
         this.items[i].overall_to_be_paid=this.items[i].amount+this.items[i].interest;
         this.items[i].remaining_to_be_paid=this.items[i].overall_to_be_paid-this.items[i].total_amount;

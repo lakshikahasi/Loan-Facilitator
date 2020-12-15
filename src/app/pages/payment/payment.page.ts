@@ -39,7 +39,7 @@ export class PaymentPage implements OnInit {
     this.storage.get('storage_XXX').then((val)=>{
       console.log('bank id is ', val.bank_id);
       console.log('val value is ', val);
-
+      this.bank_id=val.bank_id;
       
     });
   }
@@ -71,9 +71,10 @@ export class PaymentPage implements OnInit {
       return new Promise(resoler=>{
         let body={
           nic:this.nic,
+          bank_id:this.bank_id,
         }
 
-        this.accessPr.postBorrower(body, this.nic).subscribe((res:any)=>{
+        this.accessPr.postBorrower(body, this.nic, this.bank_id).subscribe((res:any)=>{
           if(res.status==true){
             loader.dismiss();
             this.disableButton=false;

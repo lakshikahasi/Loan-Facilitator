@@ -169,7 +169,7 @@ postLoanUpdate(body, loan_id){
 }     
 
 
-postBorrower(body, nic){
+postBorrower(body, nic, bank_id){
   let headers=new HttpHeaders({
     'Content-Type':'applicationJson,charset-UTF-8'
 });
@@ -178,7 +178,7 @@ let options={
 }
 this.currentUser = new User(body.nic);
 this.isLogged = true;
-return this.http.post(AccessProviders.server+'/getFarmerLoans/'+nic, JSON.stringify(body),{
+return this.http.post(AccessProviders.server+'/getFarmerLoans/'+nic+'/'+bank_id, JSON.stringify(body),{
     headers: new HttpHeaders().set('Content-Type', 'application/json'),
   })
 . map(res=>res);
