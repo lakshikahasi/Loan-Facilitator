@@ -1,7 +1,8 @@
 {
   "name": "appBank",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }

@@ -122,7 +122,11 @@ const routes: Routes = [
   {
     path: 'payment-details',
     loadChildren: () => import('./pages/payment-details/payment-details.module').then( m => m.PaymentDetailsPageModule)
+  },  {
+    path: 'report',
+    loadChildren: () => import('./pages/report/report.module').then( m => m.ReportPageModule)
   },
+
 ];
 
 @NgModule({

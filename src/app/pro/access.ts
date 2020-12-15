@@ -38,7 +38,9 @@ export class Borrower {
 
 export class AccessProviders{
 
- public static server:string='http://localhost:8000';
+ public static server:string='http://192.168.8.183:8080';
+ //public static server:string='http://localhost:8000';
+
  currentUser: User;
  nic:Borrower;
  isLogged: Boolean = false;

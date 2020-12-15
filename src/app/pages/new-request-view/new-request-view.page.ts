@@ -53,6 +53,10 @@ export class NewRequestViewPage implements OnInit {
     
   }
 
+  viewAgricultureReport(){
+    this.router.navigate(['/report']);
+  }
+
   viewPersonalInfo(){
     this.router.navigate(['/personal-details-view']);
   }

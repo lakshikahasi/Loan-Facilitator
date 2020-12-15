@@ -20,8 +20,14 @@ export class ApplicationFormViewPage implements OnInit {
 
   type:string="";
 
-  items:any;
   repo:any;
+  fix:any;
+  mot:any;
+  gu1:any;
+  gua2:any;
+
+  items:any;
+
   acc:any;
 
   nic:string="";
@@ -49,6 +55,7 @@ export class ApplicationFormViewPage implements OnInit {
       this.http.get(AccessProviders.server+'/getApplicantDetails/'+this.app_id).map(res=>res).subscribe((res:any)=>{
         console.log(res.message);
         this.items=res.message;
+        this.nic=res.message[0].nic;
       });
     });
   }
@@ -74,7 +81,7 @@ export class ApplicationFormViewPage implements OnInit {
     this.icon6="chevron-down-outline";
   }
 
-  /* setLoanPurposes(){
+   setLoanPurposes(){
     if(this.hidePup==false){
       this.icon2="chevron-up-outline";
       this.hidePup=true;
@@ -94,12 +101,8 @@ export class ApplicationFormViewPage implements OnInit {
     this.hideWit=false;
     this.icon6="chevron-down-outline";
 
-    this.type="agri";
-    this.http.get(AccessProviders.server+'/getReports/'+this.app_id+'/'+this.type).map(res=>res).subscribe((res)=>{
-      console.log(res);
-      this.repo=res.agr_images;//error here, identify these details at the end
-    });
-  } */
+    
+  } 
 
   setSpouseDetails(){
     if(this.hideSp==false){
@@ -120,6 +123,13 @@ export class ApplicationFormViewPage implements OnInit {
     this.icon5="chevron-down-outline";
     this.hideWit=false;
     this.icon6="chevron-down-outline";
+    this.type="repo";
+
+    this.http.get(AccessProviders.server+'/getreports/'+this.app_id+'/'+this.type).map(res => res).subscribe((res:any)=>{
+      console.log(res);
+      this.repo=res;
+    
+    });
   }
 
   setBankDetails(){
@@ -144,7 +154,7 @@ export class ApplicationFormViewPage implements OnInit {
 
     console.log(this.nic);
 
-    this.http.get(AccessProviders.server+'/getAccounts/'+this.nic).map(res=>res).subscribe((res)=>{
+    this.http.get(AccessProviders.server+'/getaccounts/'+this.nic).map(res=>res).subscribe((res)=>{
       console.log(res);
       this.acc=res;
     });
@@ -153,7 +163,7 @@ export class ApplicationFormViewPage implements OnInit {
   setPropertyDetails(){
     if(this.hidePro==false){
       this.icon5="chevron-up-outline";
-      this.hideBan=true;
+      this.hidePro=true;
     }else{
       this.hidePro=false;
       this.icon5="chevron-down-outline";
@@ -169,6 +179,20 @@ export class ApplicationFormViewPage implements OnInit {
     this.icon4="chevron-down-outline";
     this.hideWit=false;
     this.icon6="chevron-down-outline";
+
+    this.type="fix";
+    this.http.get(AccessProviders.server+'/getreports/'+this.app_id+'/'+this.type).map(res => res).subscribe((res:any)=>{
+      console.log(res);
+      this.fix=res;
+    
+    });
+
+    this.type="mot";
+    this.http.get(AccessProviders.server+'/getreports/'+this.app_id+'/'+this.type).map(res => res).subscribe((res:any)=>{
+      console.log(res);
+      this.mot=res;
+    
+    });
   }
 
   setWitnessesDetails(){
@@ -187,9 +211,27 @@ export class ApplicationFormViewPage implements OnInit {
     this.hideSp=false;
     this.icon3="chevron-down-outline";
     this.hideBan=false;
+    this.icon4="chevron-down-outline";
+    this.hidePro=false;
     this.icon5="chevron-down-outline";
-    this.hideWit=false;
-    this.icon6="chevron-down-outline";
+
+    
+    this.type="gu1";
+    this.http.get(AccessProviders.server+'/getreports/'+this.app_id+'/'+this.type).map(res => res).subscribe((res:any)=>{
+      console.log(res);
+      this.gu1=res;
+    
+    });
+
+    this.type="gua2";
+    this.http.get(AccessProviders.server+'/getreports/'+this.app_id+'/'+this.type).map(res => res).subscribe((res:any)=>{
+      console.log(res);
+      this.gua2=res;
+    
+    });
+
   }
+
+  
 
 }
