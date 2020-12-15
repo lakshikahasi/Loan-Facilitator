@@ -11,28 +11,29 @@
 
   <br>
   
-  <ion-row>
-    <ion-col size="3" class="bold" class="col"><b>Date of payment</b></ion-col>
-    <ion-col size="3" class="bold" class="col"><b>Current payment</b></ion-col>
-    <ion-col size="3" class="bold" class="col"><b>Total amount paid</b></ion-col>
-    <ion-col size="3" class="bold" class="col"><b>Amount to be paid</b></ion-col>
-  </ion-row>
-
-  <ion-row>
-    <ion-col size="3" class="col">2020/12/25</ion-col>
-    <ion-col size="3" class="col">4500</ion-col>
-    <ion-col size="3" class="col">4500</ion-col>
-    <ion-col size="3" class="col">103500</ion-col>
-  </ion-row>
+  <ion-card>
+    <ion-row>
+      <ion-col size="3" class="bold" class="col"><b>Date of payment</b></ion-col>
+      <ion-col size="3" class="bold" class="col"><b>Current payment</b></ion-col>
+      <ion-col size="3" class="bold" class="col"><b>Total amount paid</b></ion-col>
+      <ion-col size="3" class="bold" class="col"><b>Amount to be paid</b></ion-col>
+    </ion-row>
+  
+    <ion-row *ngFor='let value of values'>
+      <ion-col size="3" class="col">{{value.Installment_date}}</ion-col>
+      <ion-col size="3" class="col">{{value.Installment}}</ion-col>
+      <ion-col size="3" class="col">{{value.paid_amount}}</ion-col>
+      <ion-col size="3" class="col">{{value.to_be_paid_amount}}</ion-col>
+    </ion-row>
+  </ion-card>
 
   <br>
-  <br>
-  <br>
 
-  <ion-list>
+  <ion-list  *ngFor='let item of items'>
     <ion-item>
       <ion-label size="6" color="success"><b>Date of payment:</b></ion-label>
-      <ion-input size="6" [(ngModel)]="paidDate"></ion-input>
+      <ion-datetime displayFormat="DD-MM-YYYY" [(ngModel)]="paidDate"></ion-datetime>
+      <!-- <ion-input size="6" [(ngModel)]="paidDate"></ion-input> -->
     </ion-item>
 
     <ion-item>
@@ -42,19 +43,19 @@
 
     <ion-item>
       <ion-label size="6" color="success"><b>Total amount paid:</b></ion-label>
-      <!-- <ion-label size="6">{{item.total_amount}}</ion-label> -->
-      <ion-label color="medium" size="6">4500</ion-label>
+      <ion-label size="6">{{item.total_amount}}</ion-label>
+      <!-- <ion-label color="medium" size="6">4500</ion-label> -->
     </ion-item>
 
     <ion-item>
       <ion-label size="6" color="success"><b>Amount to be paid:</b></ion-label>
-      <!-- <ion-label size="6">{{item.remaining_to_be_paid}}</ion-label> -->
-      <ion-label color="medium" size="6">103500</ion-label>
+      <ion-label size="6">{{item.to_be_paid_amount}}</ion-label>
+      <!-- <ion-label color="medium" size="6">103500</ion-label> -->
     </ion-item>
 
     <ion-item>
       <ion-label size="6" color="success"><b>Next payment date:</b></ion-label>
-      <ion-label color="medium" size="6">2021/01/25</ion-label>
+      <ion-label color="medium" size="6">{{item.to_be_paid_date}</ion-label>
     </ion-item>
   </ion-list>
 
