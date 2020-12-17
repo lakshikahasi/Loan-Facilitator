@@ -25,8 +25,22 @@ export class NewRequestLoanPage implements OnInit {
     public accessPr: AccessProviders,
     private http: HttpClient,
     ) { }
+    doRefresh(event:any) {
+      console.log('Begin async operation');
+  
+      setTimeout(() => {
+        this.call();
+        //console.log('Async operation has ended');
+        event.target.complete();
+      }, 2000);
+    }
 
   ngOnInit() {
+    this.call();
+    
+  }
+
+  call(){
     this.storage.get("storage_loan").then((val)=>{
       console.log(val);
       this.loan_id=val;

@@ -11,7 +11,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { IonicStorageModule } from '@ionic/storage';
 import { HttpClientModule } from '@angular/common/http';
 
-
+import {Geolocation} from  '@ionic-native/geolocation/ngx';
+import { NativeGeocoder, NativeGeocoderResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';
+//import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { FormsModule } from '@angular/forms' ; 
+import { ReactiveFormsModule} from '@angular/forms';
+//import { MatStepperModule } from '@angular/material'; 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -25,7 +30,13 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    Geolocation,
+    NativeGeocoder,
+    
+    
+   
+    
   ],
   bootstrap: [AppComponent]
 })

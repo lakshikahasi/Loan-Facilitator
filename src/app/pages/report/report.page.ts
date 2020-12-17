@@ -7,6 +7,7 @@ import {HttpClient,HttpHeaders,HttpErrorResponse}  from '@angular/common/http';
 import * as moment from 'moment';
 import { Location } from "@angular/common";
 
+
 @Component({
   selector: 'app-report',
   templateUrl: './report.page.html',
@@ -15,6 +16,9 @@ import { Location } from "@angular/common";
 export class ReportPage implements OnInit {
   app_id:string;
   data:any;
+  data2:any;
+  data3:any;
+  
   constructor(
     private router:Router,
     private toastCtrl:ToastController,
@@ -31,6 +35,12 @@ export class ReportPage implements OnInit {
     this.call();
   }
 
+  
+  back(){
+    this.home.back();
+  }
+
+
   call(){
 
     this.storage.get("storage_appid").then((res)=>{
@@ -40,7 +50,24 @@ export class ReportPage implements OnInit {
         //this.storage.set('store_nic',res);
         console.log(res);
         this.data=res.message;
+
       
+         
+       });
+
+       this.http.get(AccessProviders.server+'/showARloans/'+this.app_id).map(res => res).subscribe((res:any)=>{ 
+        //this.storage.set('store_nic',res);
+        console.log(res);
+        this.data2=res.message;
+         
+         
+       });
+
+       this.http.get(AccessProviders.server+'/showestimate/'+this.app_id).map(res => res).subscribe((res:any)=>{ 
+        //this.storage.set('store_nic',res);
+        console.log(res);
+        this.data3=res.message;
+         
          
        });
 
@@ -48,4 +75,13 @@ export class ReportPage implements OnInit {
 
 
 }
+
+
+where(){
+  this.storage.set('storage_location',this.app_id);
+  
+  this.router.navigate(['/location']);
+}
+
+
 }

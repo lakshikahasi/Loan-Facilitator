@@ -38,8 +38,8 @@ export class Borrower {
 
 export class AccessProviders{
 
- public static server:string='http://192.168.8.183:8080';
- //public static server:string='http://localhost:8000';
+ //public static server:string='http://192.168.8.183:8080';
+ public static server:string='http://localhost:8000';
 
  currentUser: User;
  nic:Borrower;
@@ -149,6 +149,39 @@ export class AccessProviders{
     
 }
 
+postrejectapp(body){
+  let headers=new HttpHeaders({
+      'Content-Type':'applicationJson,charset-UTF-8'
+  });
+  let options={
+       headers:headers
+  }
+  
+  return this.http.post(AccessProviders.server+'/rejectloan',JSON.stringify(body),{
+      headers: new HttpHeaders().set('Content-Type', 'application/json'),
+    }).timeout(59000)
+  . map(res=>res);
+  
+  
+}
+
+postagrirep(body,id){
+  let headers=new HttpHeaders({
+      'Content-Type':'applicationJson,charset-UTF-8'
+  });
+  let options={
+       headers:headers
+  }
+  
+  return this.http.post(AccessProviders.server+'/updateagri/'+id,JSON.stringify(body),{
+      headers: new HttpHeaders().set('Content-Type', 'application/json'),
+    }).timeout(59000)
+  . map(res=>res);
+  
+  
+}
+
+
 
 postLoanUpdate(body, loan_id){
   let headers=new HttpHeaders({
@@ -182,6 +215,39 @@ return this.http.post(AccessProviders.server+'/getFarmerLoans/'+nic+'/'+bank_id,
     headers: new HttpHeaders().set('Content-Type', 'application/json'),
   })
 . map(res=>res);
+}
+
+
+postobtainloan(body){
+  let headers=new HttpHeaders({
+      'Content-Type':'applicationJson,charset-UTF-8'
+  });
+  let options={
+       headers:headers
+  }
+  
+  return this.http.post(AccessProviders.server+'/obtainloan',JSON.stringify(body),{
+      headers: new HttpHeaders().set('Content-Type', 'application/json'),
+    }).timeout(59000)
+  . map(res=>res);
+  
+  
+}
+
+postapprove(body,approve_id){
+  let headers=new HttpHeaders({
+      'Content-Type':'applicationJson,charset-UTF-8'
+  });
+  let options={
+       headers:headers
+  }
+  
+  return this.http.post(AccessProviders.server+'/updateapprove/'+approve_id,JSON.stringify(body),{
+      headers: new HttpHeaders().set('Content-Type', 'application/json'),
+    }).timeout(59000)
+  . map(res=>res);
+  
+  
 }
         
 }

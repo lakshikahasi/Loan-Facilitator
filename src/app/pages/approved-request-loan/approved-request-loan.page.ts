@@ -23,20 +23,36 @@ export class ApprovedRequestLoanPage implements OnInit {
     private http: HttpClient,
   ) { }
 
+  doRefresh(event:any) {
+    console.log('Begin async operation');
+
+    setTimeout(() => {
+      this.call();
+      //console.log('Async operation has ended');
+      event.target.complete();
+    }, 2000);
+  }
+
+
   ngOnInit() {
+    this.call();
+  
+  }
+
+  call(){
     this.storage.get("storage_loan").then((val)=>{
       console.log(val);
       this.loan_id=val;
       console.log(this.loan_id);
 
-      this.http.get(AccessProviders.server+'/getApplicationDetails/'+this.loan_id).map(res=>res).subscribe((res:any)=>{
+      this.http.get(AccessProviders.server+'/getapproveDetails/'+this.loan_id).map(res=>res).subscribe((res:any)=>{
         this.items=res.message;
         console.log(this.items);
       });
     });
+
   }
 
-  view
 
   viewApprovedRequest(event:any){
     console.log(event.target.id);

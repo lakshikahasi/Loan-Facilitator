@@ -126,6 +126,14 @@ const routes: Routes = [
     path: 'report',
     loadChildren: () => import('./pages/report/report.module').then( m => m.ReportPageModule)
   },
+  {
+    path: 'location',
+    loadChildren: () => import('./pages/location/location.module').then( m => m.LocationPageModule)
+  },
+  {
+    path: 'toobtain',
+    loadChildren: () => import('./pages/toobtain/toobtain.module').then( m => m.ToobtainPageModule)
+  },
 
 ];
 

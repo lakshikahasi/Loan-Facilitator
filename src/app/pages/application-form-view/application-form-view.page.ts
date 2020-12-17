@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { from } from 'rxjs';
-import { Storage } from '@ionic/storage';
-import { HttpClient } from '@angular/common/http';
-import { AccessProviders } from 'src/app/pro/access';
+import { Router,ActivatedRoute } from '@angular/router';
+import { ToastController,LoadingController,AlertController, NavController } from '@ionic/angular';
+import { AccessProviders } from '../../pro/access';
+import {Storage} from '@ionic/storage';
+import {HttpClient,HttpHeaders,HttpErrorResponse}  from '@angular/common/http';
+import * as moment from 'moment';
+import { Location } from "@angular/common";
 
 @Component({
   selector: 'app-application-form-view',
@@ -42,9 +45,16 @@ export class ApplicationFormViewPage implements OnInit {
   icon6:string="chevron-down-outline";
 
   constructor(
+    private router:Router,
+    private toastCtrl:ToastController,
+    private loadingCtrl:LoadingController,
+    private alertCtrl:AlertController,
+    private acessPr:AccessProviders,
     private storage:Storage,
+    private navCtrl:NavController,
     public http:HttpClient,
-    private accessPr:AccessProviders,
+    private home: Location
+    
   ) { }
 
   ngOnInit() {
@@ -230,6 +240,12 @@ export class ApplicationFormViewPage implements OnInit {
     
     });
 
+  }
+
+  where(){
+    this.storage.set('storage_location',this.app_id);
+
+    this.router.navigate(['/location']);
   }
 
   

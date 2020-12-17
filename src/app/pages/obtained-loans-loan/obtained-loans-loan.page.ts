@@ -48,7 +48,7 @@ export class ObtainedLoansLoanPage implements OnInit {
       this.loan_id=val;
       console.log(this.loan_id);
 
-      this.http.get(AccessProviders.server+'/getApplicationDetails/'+this.loan_id).map(res=>res).subscribe((res:any)=>{
+      this.http.get(AccessProviders.server+'/getobtainDetails/'+this.loan_id).map(res=>res).subscribe((res:any)=>{
         this.items=res.message;
         console.log(this.items);
       });

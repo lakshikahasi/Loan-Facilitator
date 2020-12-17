@@ -1,19 +1,3 @@
-/* import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-approveloan',
-  templateUrl: './approveloan.page.html',
-  styleUrls: ['./approveloan.page.scss'],
-})
-export class ApproveloanPage implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
- */
 
 import { Component, OnInit } from '@angular/core';
 import {Storage} from '@ionic/storage';
@@ -93,10 +77,7 @@ export class ApproveloanPage implements OnInit {
     console.log(this.date_you_come);
     console.log(this.special_notices);
 
-    if(this.branch==""){
-      this.presentToast("reason is required");
-    }
-    else if(this.date_you_come==""){
+   if(this.date_you_come==""){
       this.presentToast("reason is required");
     }
     else if(this.special_notices==""){
@@ -107,10 +88,11 @@ export class ApproveloanPage implements OnInit {
       let body={
           application_id:this.application_id,
           loan_id:this.loan_id,
-          date:this.date,
+          approved_date:this.date,
           date_you_come:moment(this.date_you_come).format('YYYY-MM-DD'),
-          branch:this.branch,
+          //branch:this.branch,
           special_notices:this.special_notices,
+          approve_status:"false"
     
       }
 
@@ -118,14 +100,31 @@ export class ApproveloanPage implements OnInit {
       this.acessPr.postreasonapp(body).subscribe((res:any)=>{
         if(res.status==true){
             console.log(res);
-            this.http.get(AccessProviders.server+'/dltreject/'+this.application_id).map(res=>res).subscribe((res:any)=>{
-              // this.items=res.message;
-               console.log();
-             });
+                 
+    let body={
+      //size:this.size,
+      
+      bank_status:"true",
+      
 
-            this.router.navigate(['/new-request-loan']);
+     
+
+    }
+
+    this.acessPr.postagrirep(body,this.application_id).subscribe((res:any)=>{
+      if(res.status==true){
+          console.log("correct");
+          this.router.navigate(['/new-request-loan']);
+
+          
+      }else{
+       
+      }
+  },(err=>{
+  
+  })); 
+           
             
-
         }
         else{
           console.log(res);

@@ -12,7 +12,7 @@ import { ToastController,LoadingController,AlertController,NavController } from 
   styleUrls: ['./new-request-view.page.scss'],
 })
 export class NewRequestViewPage implements OnInit {
-
+  dat:Number;
   appid:string="";
   items:any[];
   loan_id:string="";
@@ -87,9 +87,33 @@ export class NewRequestViewPage implements OnInit {
     confirm.present();
   }
 
-  statePending(){
-    this.router.navigate(['/pending-reason']);
+  async statePending(){
+    let confirm = await this.alertCtrl.create({
+      header: 'Do you Reject this Application?',
+      buttons:[
+        {
+          text: 'Yes',
+        handler: () => {
+          
+          this.dat=1;
+          this.storage.set('storage_reject', this.dat);
+          //this.postApproveData(this.loan_id, this.appid);
+          this.router.navigate(['/pending-reason']);
+        }
+        },
+        {
+          text: 'No',
+          handler: () => {
+            console.log('Disagree clicked');
+          }
+        }
+      ]
+    });
+    confirm.present();
+    
   }
+
+  
 
   async postApproveData(loan_id:string, appid:string){
     var date = new Date();
@@ -101,5 +125,7 @@ export class NewRequestViewPage implements OnInit {
       loan_id:this.loan_id,
     }
   }
+
+  
 
 }

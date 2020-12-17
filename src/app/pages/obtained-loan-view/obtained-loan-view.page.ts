@@ -20,7 +20,9 @@ export class ObtainedLoanViewPage implements OnInit {
 
   choose:string="";
   nameini:string="";
+  app_id:number;
 
+  data:any;
   constructor(private router: Router,
     public storage:Storage,
     private acessPr:AccessProviders,
@@ -30,27 +32,18 @@ export class ObtainedLoanViewPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.storage.get("storage_loan").then((val)=>{
-      console.log(val);
-      this.loan_id=val;
-    });
-    this.storage.get("storage_appid").then((val)=>{
-      console.log(val);
-      this.appid=val;
-
-      console.log(this.appid);
-      this.http.get(AccessProviders.server+'/getFarmerDetails/'+this.appid).map(res=>res).subscribe((res:any)=>{
+    this.storage.get("storage_appid").then((res)=>{
       console.log(res);
-      this.items=res.message;
-      console.log(this.items);
-
-      this.choose=this.items[0].choose;
-      this.nameini=this.items[0].nameini;
-
-      console.log(this.choose);
+      this.app_id=res;
+  
+      this.http.get(AccessProviders.server+'/getobtaineddetailsbyappid/'+this.app_id).map(res=>res).subscribe((res:any)=>{
+        this.data=res.message;
+        this.choose=res.message[0].choose;
+        this.nameini=res.message[0].nameini;
+        console.log('items are ', this.data);
+      });
     });
 
-    });
   }
 
   viewObtainedPersonalInfo(){
@@ -59,6 +52,10 @@ export class ObtainedLoanViewPage implements OnInit {
 
   viewObatainedApplicationForm(){
     this.router.navigate(['/application-form-view']);
+  }
+
+  viewAgriForm(){
+    this.router.navigate(['/report']);
   }
 
 }
