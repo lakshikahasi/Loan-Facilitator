@@ -134,6 +134,14 @@ const routes: Routes = [
     path: 'toobtain',
     loadChildren: () => import('./pages/toobtain/toobtain.module').then( m => m.ToobtainPageModule)
   },
+  {
+    path: 'contact-us',
+    loadChildren: () => import('./pages/contact-us/contact-us.module').then( m => m.ContactUsPageModule)
+  },
+  {
+    path: 'about-us',
+    loadChildren: () => import('./pages/about-us/about-us.module').then( m => m.AboutUsPageModule)
+  },
 
 ];
 

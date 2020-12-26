@@ -247,7 +247,24 @@ postapprove(body,approve_id){
     }).timeout(59000)
   . map(res=>res);
   
-  
+}
+
+postPayment(body){
+  let headers=new HttpHeaders({
+    'Content-Type':'applicationJson,charset-UTF-8'
+  });
+  let options={
+    headers:headers
+  }
+          
+  /* return this.http.post(this.server+'/createLoan',JSON.stringify(body),{
+    headers: new HttpHeaders().set('Content-Type', 'application/json'),
+ }).timeout(59000)
+*/
+  return this.http.post(AccessProviders.server+'/addPayment',JSON.stringify(body),{
+     headers: new HttpHeaders().set('Content-Type', 'application/json'),
+  }).timeout(59000)
+  . map(res=>res);                   
 }
         
 }

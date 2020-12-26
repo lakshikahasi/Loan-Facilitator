@@ -16,7 +16,7 @@ export class NewRequestLoanPage implements OnInit {
   date:string="";
   nameini:string="";
   loan_id:string="";
-  //nic:string="";
+  nic:string="";
   items:any;
   dat:string="";
 
